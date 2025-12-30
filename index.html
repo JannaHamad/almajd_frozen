@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- سلة الطلبات -->
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-header">
     <h3>🛒 سلة الطلبات</h3>
@@ -19,6 +20,7 @@
   <button class="whatsapp" onclick="sendWhatsApp()">إرسال الطلب عبر واتساب</button>
 </div>
 
+<!-- الهيدر -->
 <header class="top-bar">
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <div class="logo">
@@ -32,14 +34,17 @@
   </div>
 </header>
 
+<!-- القائمة الجانبية -->
 <div class="side-menu" id="sideMenu">
   <a href="#top" onclick="toggleMenu()">🏠 الرئيسية</a>
   <a href="#menu" onclick="toggleMenu()">📋 قائمة الأصناف</a>
   <a href="#location" onclick="toggleMenu()">📍 موقعنا</a>
 </div>
 
+<!-- الكوفر -->
 <section class="hero"></section>
 
+<!-- قائمة الأصناف -->
 <section id="menu" class="menu">
   <h2 class="section-title">قائمة الأصناف</h2>
 
@@ -53,10 +58,11 @@
 
   <div class="category" id="all"></div>
 
+  <!-- اللحوم -->
   <div class="category" id="meat">
     <div class="items">
       <div class="item">
-        <img src="chicken.jpg">
+        <img src="chicken.jpg" alt="دجاج طازج">
         <h4>دجاج طازج</h4>
         <p>25 ₪</p>
         <div class="qty">
@@ -65,69 +71,107 @@
           <button onclick="changeQty('دجاج طازج',25,1)">+</button>
         </div>
       </div>
+      <div class="item">
+        <img src="wings.jpg" alt="أجنحة دجاج">
+        <h4>أجنحة دجاج</h4>
+        <p>18 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('أجنحة دجاج',18,-1)">-</button>
+          <span id="أجنحة دجاج">0</span>
+          <button onclick="changeQty('أجنحة دجاج',18,1)">+</button>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- الخضار -->
+  <div class="category" id="veg">
+    <div class="items">
+      <div class="item">
+        <img src="peas.jpg" alt="بازيلاء">
+        <h4>بازيلاء</h4>
+        <p>8 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('بازيلاء',8,-1)">-</button>
+          <span id="بازيلاء">0</span>
+          <button onclick="changeQty('بازيلاء',8,1)">+</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="molokhia.jpg" alt="ملوخية">
+        <h4>ملوخية</h4>
+        <p>7 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('ملوخية',7,-1)">-</button>
+          <span id="ملوخية">0</span>
+          <button onclick="changeQty('ملوخية',7,1)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- الوجبات -->
   <div class="category" id="meals">
     <div class="items">
-        <div class="item">
-          <img src="tray.jpg">
-          <h4>صينية وجبة عائلية</h4>
-          <p>45 ₪</p>
-          <div class="qty">
-            <button onclick="changeQty('صينية وجبة عائلية',45,-1)">-</button>
-            <span id="صينية وجبة عائلية">0</span>
-            <button onclick="changeQty('صينية وجبة عائلية',45,1)">+</button>
-          </div>
+      <div class="item">
+        <img src="tray.jpg" alt="صينية وجبة عائلية">
+        <h4>صينية وجبة عائلية</h4>
+        <p>45 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('صينية وجبة عائلية',45,-1)">-</button>
+          <span id="صينية وجبة عائلية">0</span>
+          <button onclick="changeQty('صينية وجبة عائلية',45,1)">+</button>
         </div>
       </div>
+    </div>
   </div>
-  
+
+  <!-- السندويشات -->
   <div class="category" id="sandwich">
     <div class="items">
-        <div class="item">
-          <img src="sandwich.jpg">
-          <h4>سندويش سوبريم</h4>
-          <p>15 ₪</p>
-          <div class="qty">
-            <button onclick="changeQty('سندويش سوبريم',15,-1)">-</button>
-            <span id="سندويش سوبريم">0</span>
-            <button onclick="changeQty('سندويش سوبريم',15,1)">+</button>
-          </div>
+      <div class="item">
+        <img src="sandwich.jpg" alt="سندويش سوبريم">
+        <h4>سندويش سوبريم</h4>
+        <p>15 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('سندويش سوبريم',15,-1)">-</button>
+          <span id="سندويش سوبريم">0</span>
+          <button onclick="changeQty('سندويش سوبريم',15,1)">+</button>
         </div>
       </div>
+    </div>
   </div>
+
 </section>
 
+<!-- الموقع -->
 <div class="location-card-container" id="location">
-    <div class="address-card">
-        <div class="card-content">
-            <h4 class="card-title">العنوان</h4>
-            <p class="card-text">جماعين – الشارع الرئيسي – مقابل كازية الجماعيني</p>
-            <a href="https://maps.apple.com/?ll=32.137551,35.220417&q=Marked%20Location&t=h" target="_blank" class="maps-link">
-                افتح في خرائط جوجل <i class="fas fa-arrow-left"></i>
-            </a>
-        </div>
-        <div class="card-icon">
-            <div class="icon-bg">
-                <i class="fas fa-map-marker-alt"></i>
-            </div>
-        </div>
+  <div class="address-card">
+    <div class="card-content">
+      <h4 class="card-title">العنوان</h4>
+      <p class="card-text">جماعين – الشارع الرئيسي – مقابل كازية الجماعيني</p>
+      <a href="https://maps.apple.com/?ll=32.137551,35.220417&q=Marked%20Location&t=h" target="_blank" class="maps-link">
+        افتح في الخرائط <i class="fas fa-arrow-left"></i>
+      </a>
     </div>
+    <div class="card-icon">
+      <div class="icon-bg"><i class="fas fa-map-marker-alt"></i></div>
+    </div>
+  </div>
 </div>
 
+<!-- الفوتر -->
 <footer class="address-box">
   <div class="footer-brand">
     <img src="logo.png">
     <h3>مجمدات المجد</h3>
     <p>نقدم لكم أفضل أنواع المجمدات والأطعمة</p>
   </div>
-
   <div class="follow-us">
     <p>تابعنا</p>
     <div class="social-icons">
-      <a href="https://wa.me/970566706688" target="_blank" class="wa-icon"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.facebook.com/share/17kVSba7L2/" target="_blank" class="fb-icon"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/970566706688" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/share/17kVSba7L2/" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
   </div>
 </footer>
@@ -135,4 +179,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
