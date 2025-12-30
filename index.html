@@ -10,12 +10,10 @@
 <body>
 
 <div class="side-menu-drawer" id="sideMenu">
-    <div class="drawer-header menu-orange-bg">
+    <div class="menu-orange-header">
         <span class="close-btn" onclick="toggleMenu()">×</span>
-        <div class="header-info">
-            <h3>مجمدات المجد</h3>
-            <p>نقدم لكم الأفضل</p>
-        </div>
+        <h3>مجمدات المجد</h3>
+        <p>نقدم لكم الأفضل</p>
     </div>
     <div class="menu-drawer-links">
         <p class="section-label">القائمة الرئيسية</p>
@@ -26,12 +24,11 @@
 </div>
 
 <div class="cart-drawer" id="cartDrawer">
-    <div class="drawer-header">
+    <div class="menu-orange-header">
         <span class="close-btn" onclick="toggleCart()">×</span>
         <h3>🛒 سلة الطلبات</h3>
     </div>
-    <div id="cartItems">
-        </div>
+    <div id="cartItems"></div>
     <div class="cart-footer">
         <p class="total">المجموع: <span id="cartTotal">0</span> ₪</p>
         <button class="whatsapp-send" id="sendBtn" onclick="sendWhatsApp()" disabled>السلة فارغة</button>
@@ -59,127 +56,36 @@
         <button class="tab active" onclick="showCategory('all', this)">🛒 الكل</button>
         <button class="tab" onclick="showCategory('meat', this)">🥩 لحوم</button>
         <button class="tab" onclick="showCategory('veg', this)">🥦 خضار</button>
+        <button class="tab" onclick="showCategory('meals', this)">🍱 وجبات</button>
         <button class="tab" onclick="showCategory('sandwich', this)">🥪 سندويشات</button>
     </div>
+    <div class="category" id="all"></div>
+    </section>
 
-    <!-- جميع المنتجات تظهر عند "الكل" -->
-    <div class="category" id="all">
-        <!-- لحوم -->
-        <div class="item">
-            <img src="chicken.jpg" alt="دجاج">
-            <h4>دجاج</h4>
-            <p>10 ₪</p>
-            <div class="qty">
-                <button onclick="changeQty('دجاج',10,-1)">-</button>
-                <span id="دجاج">0</span>
-                <button onclick="changeQty('دجاج',10,1)">+</button>
-            </div>
+<div class="location-card-container" id="location">
+    <div class="address-card">
+        <div class="card-content">
+            <h4 class="card-title">العنوان</h4>
+            <p class="card-text">جماعين – الشارع الرئيسي – مقابل كازية الجماعيني للمحروقات – بجانب سوبر ماركت الرنتيسي</p>
+            <a href="https://maps.apple.com/?ll=32.137551,35.220417&q=Location&t=h" target="_blank" class="maps-link">افتح في خرائط جوجل ←</a>
         </div>
-        <div class="item">
-            <img src="wings.jpg" alt="أجنحة">
-            <h4>أجنحة</h4>
-            <p>10 ₪</p>
-            <div class="qty">
-                <button onclick="changeQty('أجنحة',10,-1)">-</button>
-                <span id="أجنحة">0</span>
-                <button onclick="changeQty('أجنحة',10,1)">+</button>
-            </div>
-        </div>
-
-        <!-- خضار -->
-        <div class="item">
-            <img src="bazilla.jpg" alt="بازيلا">
-            <h4>بازيلا</h4>
-            <p>10 ₪</p>
-            <div class="qty">
-                <button onclick="changeQty('بازيلا',10,-1)">-</button>
-                <span id="بازيلا">0</span>
-                <button onclick="changeQty('بازيلا',10,1)">+</button>
-            </div>
-        </div>
-
-        <!-- سندويشات -->
-        <div class="item">
-            <img src="arays.jpg" alt="عرايس">
-            <h4>عرايس</h4>
-            <p>10 ₪</p>
-            <div class="qty">
-                <button onclick="changeQty('عرايس',10,-1)">-</button>
-                <span id="عرايس">0</span>
-                <button onclick="changeQty('عرايس',10,1)">+</button>
-            </div>
-        </div>
-        <div class="item">
-            <img src="burger.jpg" alt="برغر">
-            <h4>برغر</h4>
-            <p>10 ₪</p>
-            <div class="qty">
-                <button onclick="changeQty('برغر',10,-1)">-</button>
-                <span id="برغر">0</span>
-                <button onclick="changeQty('برغر',10,1)">+</button>
-            </div>
-        </div>
+        <div class="card-icon-box"><i class="fas fa-map-marker-alt"></i></div>
     </div>
+</div>
 
-    <!-- لحوم منفصلة -->
-    <div class="category" id="meat">
-        <div class="item">
-            <img src="chicken.jpg" alt="دجاج">
-            <h4>دجاج</h4>
-            <p>10 ₪</p>
-            <div class="qty">
-                <button onclick="changeQty('دجاج',10,-1)">-</button>
-                <span id="دجاج">0</span>
-                <button onclick="changeQty('دجاج',10,1)">+</button>
-            </div>
-        </div>
-        <div class="item">
-            <img src="wings.jpg" alt="أجنحة">
-            <h4>أجنحة</h4>
-            <p>10 ₪</p>
-            <div class="qty">
-                <button onclick="changeQty('أجنحة',10,-1)">-</button>
-                <span id="أجنحة">0</span>
-                <button onclick="changeQty('أجنحة',10,1)">+</button>
-            </div>
-        </div>
+<footer class="address-box">
+    <div class="footer-brand">
+        <img src="logo.png">
+        <h3>مجمدات المجد</h3>
+        <p>نقدم لكم أفضل أنواع المجمدات</p>
     </div>
+    <div class="social-icons">
+        <p style="width:100%; margin-bottom:10px;">تابعنا</p>
+        <a href="https://wa.me/970566706688" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/share/17kVSba7L2/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+</footer>
 
-    <!-- خضار منفصلة -->
-    <div class="category" id="veg">
-        <div class="item">
-            <img src="bazilla.jpg" alt="بازيلا">
-            <h4>بازيلا</h4>
-            <p>10 ₪</p>
-            <div class="qty">
-                <button onclick="changeQty('بازيلا',10,-1)">-</button>
-                <span id="بازيلا">0</span>
-                <button onclick="changeQty('بازيلا',10,1)">+</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- سندويشات منفصلة -->
-    <div class="category" id="sandwich">
-        <div class="item">
-            <img src="arays.jpg" alt="عرايس">
-            <h4>عرايس</h4>
-            <p>10 ₪</p>
-            <div class="qty">
-                <button onclick="changeQty('عرايس',10,-1)">-</button>
-                <span id="عرايس">0</span>
-                <button onclick="changeQty('عرايس',10,1)">+</button>
-            </div>
-        </div>
-        <div class="item">
-            <img src="burger.jpg" alt="برغر">
-            <h4>برغر</h4>
-            <p>10 ₪</p>
-            <div class="qty">
-                <button onclick="changeQty('برغر',10,-1)">-</button>
-                <span id="برغر">0</span>
-                <button onclick="changeQty('برغر',10,1)">+</button>
-            </div>
-        </div>
-    </div>
-</section>
+<script src="script.js"></script>
+</body>
+</html>
