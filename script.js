@@ -2,7 +2,7 @@ let cart = {};
 
 document.addEventListener("DOMContentLoaded", () => {
     showCategory("all", document.querySelector(".tab"));
-    updateCart();
+    updateCart(); // لتحديث حالة الزر عند البداية
 });
 
 function toggleMenu() { document.getElementById("sideMenu").classList.toggle("open"); }
@@ -41,7 +41,7 @@ function updateCart() {
     itemsDiv.innerHTML = "";
 
     if (Object.keys(cart).length === 0) {
-        itemsDiv.innerHTML = `<div style="text-align:center; padding:40px; color:#999;">السلة فارغة</div>`;
+        itemsDiv.innerHTML = `<div style="text-align:center; padding:30px; color:#999;"><i class="fas fa-shopping-basket" style="font-size:40px; display:block; margin-bottom:10px;"></i>السلة فارغة حالياً</div>`;
         sendBtn.disabled = true;
         sendBtn.innerText = "السلة فارغة";
     } else {
@@ -49,9 +49,9 @@ function updateCart() {
             let cost = cart[item].qty * cart[item].price;
             total += cost; count += cart[item].qty;
             itemsDiv.innerHTML += `
-                <div style="display:flex; justify-content:space-between; padding:12px; border-bottom:1px solid #eee;">
+                <div style="display:flex; justify-content:space-between; padding:12px; border-bottom:1px solid #f9f9f9;">
                     <span>${item} × ${cart[item].qty}</span>
-                    <span style="font-weight:bold;">${cost} ₪</span>
+                    <span style="color:#ff6a00; font-weight:bold;">${cost} ₪</span>
                 </div>`;
         }
         sendBtn.disabled = false;
@@ -62,13 +62,13 @@ function updateCart() {
 }
 
 function sendWhatsApp() {
-    let text = "طلب جديد من مجمدات المجد:\n\n";
+    let text = "طلب جديد من *مجمدات المجد*:\n\n";
     let total = 0;
     for (let item in cart) {
         let cost = cart[item].qty * cart[item].price;
         total += cost;
         text += `• ${item} (${cart[item].qty}) = ${cost} ₪\n`;
     }
-    text += `\nالمجموع النهائي: ${total} ₪`;
+    text += `\n*المجموع النهائي: ${total} ₪*`;
     window.open(`https://wa.me/970566706688?text=${encodeURIComponent(text)}`);
 }
