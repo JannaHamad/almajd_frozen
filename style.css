@@ -58,24 +58,25 @@ html, body {
 }
 
 .hero {
+  width: 100%;
+  height: 120vh;              /* أطول من الشاشة شوي */
   background: url("cover.jpg") center center no-repeat;
-  background-size: contain;
-  background-color: #000;
+  background-size: contain;   /* الصورة كاملة بدون قص */
+  background-color: #f7f7f7;  /* بدل الأسود */
+  position: relative;
 }
-
-
-
 
 .overlay {
-  background: rgba(0,0,0,0.5);
   height: 100%;
-  color: white;
+  color: #000;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;  /* النص تحت */
   align-items: center;
   text-align: center;
+  padding-bottom: 60px;
 }
+
 
 .overlay h1 {
   font-size: 40px;
@@ -261,5 +262,6 @@ html, body {
     width: 85%;
   }
 }
+
 
 
