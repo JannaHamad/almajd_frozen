@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مجمدات المجد</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- السلة -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>🛒 سلة الطلبات</h3>
+    <span class="close-cart" onclick="toggleCart()">✖</span>
+  </div>
+  
+  <div id="cartItems"></div>
+
+  <p class="total">المجموع: <span id="cartTotal">0</span> ₪</p>
+
+  <button class="whatsapp" onclick="sendWhatsApp()">إرسال الطلب عبر واتساب</button>
+</div>
+
+<!-- الهيدر -->
+<header class="top-bar">
+  <div class="logo">
+    <img src="images/logo.png" alt="مجمدات المجد">
+  </div>
+
+  <div class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cartCount">0</span>
+  </div>
+</header>
+
+<!-- صورة الكوفر -->
+<section class="hero">
+  <div class="overlay">
+    <h1>مجمدات المجد</h1>
+    <p>أفضل أنواع المجمدات الطازجة</p>
+    <button onclick="scrollToMenu()">اطلب الآن</button>
+  </div>
+</section>
+
+<!-- القائمة -->
+<section id="menu" class="menu">
+  <h2>قائمة الأصناف</h2>
+
+  <!-- التابات -->
+  <div class="tabs">
+    <button class="tab active" onclick="showCategory('all', this)">الكل</button>
+    <button class="tab" onclick="showCategory('meat', this)">لحوم</button>
+    <button class="tab" onclick="showCategory('veg', this)">خضار</button>
+    <button class="tab" onclick="showCategory('meals', this)">وجبات</button>
+  </div>
+
+  <!-- لحوم -->
+  <div class="category" id="meat">
+    <div class="items">
+      <div class="item">
+        <img src="images/chicken.jpg">
+        <h4>دجاج</h4>
+        <p>25 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('دجاج',25,-1)">-</button>
+          <span id="دجاج">0</span>
+          <button onclick="changeQty('دجاج',25,1)">+</button>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/wings.jpg">
+        <h4>أجنحة دجاج</h4>
+        <p>18 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('أجنحة دجاج',18,-1)">-</button>
+          <span id="أجنحة دجاج">0</span>
+          <button onclick="changeQty('أجنحة دجاج',18,1)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- خضار -->
+  <div class="category" id="veg">
+    <div class="items">
+      <div class="item">
+        <img src="images/peas.jpg">
+        <h4>بازيلاء</h4>
+        <p>8 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('بازيلاء',8,-1)">-</button>
+          <span id="بازيلاء">0</span>
+          <button onclick="changeQty('بازيلاء',8,1)">+</button>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/molokhia.jpg">
+        <h4>ملوخية</h4>
+        <p>7 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('ملوخية',7,-1)">-</button>
+          <span id="ملوخية">0</span>
+          <button onclick="changeQty('ملوخية',7,1)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- وجبات -->
+  <div class="category" id="meals">
+    <div class="items">
+      <div class="item">
+        <img src="images/arayes.jpg">
+        <h4>عرايس</h4>
+        <p>15 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('عرايس',15,-1)">-</button>
+          <span id="عرايس">0</span>
+          <button onclick="changeQty('عرايس',15,1)">+</button>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/burger.jpg">
+        <h4>برغر</h4>
+        <p>12 ₪</p>
+        <div class="qty">
+          <button onclick="changeQty('برغر',12,-1)">-</button>
+          <span id="برغر">0</span>
+          <button onclick="changeQty('برغر',12,1)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
