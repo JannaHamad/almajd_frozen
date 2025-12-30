@@ -40,10 +40,11 @@ function sendWhatsApp(){
   window.open(`https://wa.me/970566706688?text=${encodeURIComponent(text)}`);
 }
 
-function toggleMenu(){ 
-  const menu=document.getElementById("sideMenu"); 
-  menu.style.right=menu.style.right==="10px"?"-250px":"10px"; 
+function toggleMenu() {
+    const menu = document.getElementById("sideMenu");
+    menu.classList.toggle("open");
 }
 
 document.addEventListener("DOMContentLoaded",()=>{ showCategory("all", document.querySelector(".tab")); });
+
 
