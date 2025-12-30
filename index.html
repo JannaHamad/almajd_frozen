@@ -15,11 +15,13 @@
         <h3>مجمدات المجد</h3>
         <p>نقدم لكم الأفضل</p>
     </div>
-    <div class="menu-drawer-links">
-        <p class="section-label">القائمة الرئيسية</p>
-        <a href="#top" onclick="toggleMenu()"><span class="link-text">الرئيسية</span> <i class="fas fa-home"></i></a>
-        <a href="#menu" onclick="toggleMenu()"><span class="link-text">قائمة الأصناف</span> <i class="fas fa-utensils"></i></a>
-        <a href="#location" onclick="toggleMenu()"><span class="link-text">موقعنا</span> <i class="fas fa-map-marker-alt"></i></a>
+    <div class="menu-list-container">
+        <p class="list-label">القائمة الرئيسية</p>
+        <ul class="clean-menu-list">
+            <li><a href="#top" onclick="toggleMenu()"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="#menu" onclick="toggleMenu()"><i class="fas fa-utensils"></i> قائمة الأصناف</a></li>
+            <li><a href="#location" onclick="toggleMenu()"><i class="fas fa-map-marker-alt"></i> موقعنا</a></li>
+        </ul>
     </div>
 </div>
 
@@ -36,8 +38,8 @@
 </div>
 
 <header class="top-bar">
-    <div class="logo">
-        <img src="logo.png" alt="مجمدات المجد" class="oval-logo">
+    <div class="logo-container">
+        <img src="logo.png" alt="مجمدات المجد" class="main-logo-oval">
     </div>
     <div class="cart-menu-group">
         <div class="cart-icon" onclick="toggleCart()">
@@ -56,7 +58,6 @@
         <button class="tab active" onclick="showCategory('all', this)">🛒 الكل</button>
         <button class="tab" onclick="showCategory('meat', this)">🥩 لحوم</button>
         <button class="tab" onclick="showCategory('veg', this)">🥦 خضار</button>
-        <button class="tab" onclick="showCategory('meals', this)">🍱 وجبات</button>
         <button class="tab" onclick="showCategory('sandwich', this)">🥪 سندويشات</button>
     </div>
 
@@ -72,6 +73,16 @@
                     <button onclick="changeQty('دجاج طازج', 25, -1)">-</button>
                 </div>
             </div>
+            <div class="product-card">
+                <div class="img-container"><img src="wings.jpg"></div>
+                <h4>أجنحة دجاج</h4>
+                <p class="price">15 ₪</p>
+                <div class="qty-control">
+                    <button onclick="changeQty('أجنحة دجاج', 15, 1)">+</button>
+                    <span id="أجنحة دجاج">0</span>
+                    <button onclick="changeQty('أجنحة دجاج', 15, -1)">-</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -79,12 +90,12 @@
         <div class="items-grid">
             <div class="product-card">
                 <div class="img-container"><img src="peas.jpg"></div>
-                <h4>بازيلاء</h4>
+                <h4>بازيلاء خضراء</h4>
                 <p class="price">10 ₪</p>
                 <div class="qty-control">
-                    <button onclick="changeQty('بازيلاء', 10, 1)">+</button>
+                    <button onclick="changeQty('بازيلاء خضراء', 10, 1)">+</button>
                     <span id="بازيلاء خضراء">0</span>
-                    <button onclick="changeQty('بازيلاء', 10, -1)">-</button>
+                    <button onclick="changeQty('بازيلاء خضراء', 10, -1)">-</button>
                 </div>
             </div>
         </div>
@@ -129,7 +140,7 @@
 
 <footer class="address-box">
     <div class="footer-brand">
-        <img src="logo.png" class="oval-logo">
+        <img src="logo.png" class="main-logo-oval">
         <h3>مجمدات المجد</h3>
         <p>نقدم لكم أفضل أنواع المجمدات</p>
     </div>
