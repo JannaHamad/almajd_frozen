@@ -10,18 +10,61 @@ html, body { margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; backgrou
 .cart-icon span { position: absolute; top: -3px; right: -3px; background: red; color: white; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid white; }
 .menu-btn { font-size: 30px; cursor: pointer; color: #333; }
 
-/* القوائم تظهر من اليسار (الشمال) */
-.cart-drawer, .side-menu-drawer { position: fixed; top: 0; left: -100%; width: 310px; height: 100%; background: white; z-index: 2000; transition: 0.4s ease; box-shadow: 5px 0 15px rgba(0,0,0,0.1); }
-.cart-drawer.open, .side-menu-drawer.open { left: 0; }
+/* --- إعدادات القوائم لتظهر من اليسار (جهة الثلاث نقاط والسلة) --- */
+.cart-drawer, .side-menu-drawer { 
+    position: fixed; 
+    top: 0; 
+    left: -100%; /* مخفية جهة اليسار خارج الشاشة */
+    right: auto; 
+    width: 300px; 
+    height: 100%; 
+    background: white; 
+    z-index: 2500; 
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1); 
+}
 
-/* زر الإغلاق على الشمال فوق */
-.drawer-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; }
-.close-btn { font-size: 35px; cursor: pointer; color: #888; line-height: 1; order: 0; }
-.menu-orange-bg { background: #ff6a00; color: white; border: none; }
-.menu-orange-bg .close-btn { color: white; }
+/* عند الفتح تظهر من اليسار */
+.cart-drawer.open, .side-menu-drawer.open { 
+    left: 0; 
+}
+
+/* هيدر المنيو البرتقالي المتناسق مع التصميم */
+.menu-orange-header {
+    background: #ff6a00; /* لون برتقالي متناسب مع اللوجو والسلة */
+    color: white;
+    padding: 30px 20px;
+    text-align: right;
+    position: relative;
+}
+
+.menu-orange-header h3 { margin: 0; font-size: 20px; font-weight: bold; }
+.menu-orange-header p { margin: 5px 0 0; font-size: 13px; opacity: 0.9; }
+
+/* زر الإغلاق (X) في أعلى الشمال */
+.close-btn { 
+    position: absolute;
+    top: 15px;
+    left: 15px; /* جهة الشمال */
+    font-size: 28px; 
+    cursor: pointer; 
+    color: white; 
+    line-height: 1; 
+}
 
 /* روابط المنيو */
-.menu-drawer-links { padding: 20px; }
+.menu-drawer-links { padding: 20px 10px; }
+.menu-drawer-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    border-bottom: 1px solid #f2f2f2;
+}
+.menu-drawer-links a i { color: #ff6a00; order: 1; } /* الأيقونات على اليمين */
 .menu-drawer-links a { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; text-decoration: none; color: #333; border-bottom: 1px solid #eee; font-size: 18px; }
 .menu-drawer-links i { color: #ff6a00; order: 1; }
 .section-label { color: #999; font-size: 13px; margin-bottom: 15px; }
@@ -46,3 +89,4 @@ html, body { margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; backgrou
 /* الفوتر */
 .address-box { background: #ff6a00; color: white; padding: 40px 20px; text-align: center; }
 .footer-brand img { width: 80px; border-radius: 50%; border: 3px solid white; margin-bottom: 15px; }
+
