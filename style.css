@@ -56,12 +56,13 @@ html, body {
   font-size: 12px;
   margin-right: 5px;
 }
+
 .hero {
-  height: 100vh;
   background: url("cover.jpg") center center no-repeat;
   background-size: contain;
   background-color: #000;
 }
+
 
 
 
@@ -260,4 +261,5 @@ html, body {
     width: 85%;
   }
 }
+
 
