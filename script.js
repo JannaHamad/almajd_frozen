@@ -37,7 +37,7 @@ function sendWhatsApp(){
   let text="طلب جديد من مجمدات المجد:\n\n", total=0;
   for(let item in cart){ let cost=cart[item].qty*cart[item].price; total+=cost; text+=`${item} × ${cart[item].qty} = ${cost} ₪\n`; }
   text+=`\nالمجموع: ${total} ₪`;
-  window.open(`https://wa.me/970599999999?text=${encodeURIComponent(text)}`);
+  window.open(`https://wa.me/970566706688?text=${encodeURIComponent(text)}`);
 }
 
 function toggleMenu(){ 
@@ -46,3 +46,4 @@ function toggleMenu(){
 }
 
 document.addEventListener("DOMContentLoaded",()=>{ showCategory("all", document.querySelector(".tab")); });
+
