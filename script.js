@@ -24,9 +24,9 @@ function changeQty(name, price, change) {
     cart[name].qty += change;
     if (cart[name].qty <= 0) {
         delete cart[name];
-        document.getElementById(name).innerText = 0;
+        if(document.getElementById(name)) document.getElementById(name).innerText = 0;
     } else {
-        document.getElementById(name).innerText = cart[name].qty;
+        if(document.getElementById(name)) document.getElementById(name).innerText = cart[name].qty;
     }
     updateCart();
 }
@@ -40,14 +40,14 @@ function updateCart() {
     itemsDiv.innerHTML = "";
 
     if (Object.keys(cart).length === 0) {
-        itemsDiv.innerHTML = `<div style="text-align:center; padding:30px; color:#999;">السلة فارغة</div>`;
+        itemsDiv.innerHTML = `<div style="text-align:center; padding:40px; color:#aaa;">السلة فارغة حالياً</div>`;
         sendBtn.disabled = true;
         sendBtn.innerText = "السلة فارغة";
     } else {
         for (let item in cart) {
             let cost = cart[item].qty * cart[item].price;
             total += cost; count += cart[item].qty;
-            itemsDiv.innerHTML += `<div style="display:flex; justify-content:space-between; padding:12px; border-bottom:1px solid #f2f2f2;"><span>${item} × ${cart[item].qty}</span><span>${cost} ₪</span></div>`;
+            itemsDiv.innerHTML += `<div style="display:flex; justify-content:space-between; padding:12px; border-bottom:1px solid #f2f2f2;"><span>${item} × ${cart[item].qty}</span><span style="font-weight:bold;">${cost} ₪</span></div>`;
         }
         sendBtn.disabled = false;
         sendBtn.innerHTML = '<i class="fab fa-whatsapp"></i> إرسال الطلب الآن';
