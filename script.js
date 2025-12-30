@@ -1,26 +1,15 @@
 let cart = {};
 
-function toggleCart() {
-  document.getElementById("cartDrawer").classList.toggle("open");
-}
-
-function toggleMenu() {
-  document.getElementById("sideMenu").classList.toggle("open");
-}
-
-function closeMenu() {
-  document.getElementById("sideMenu").classList.remove("open");
-}
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
 function showCategory(id, btn) {
   document.querySelectorAll(".category").forEach(c => c.style.display = "none");
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
 
-  document.getElementById(id).style.display = "block";
+  if (id === "all") {
+    document.querySelectorAll(".category").forEach(c => c.style.display = "block");
+  } else {
+    document.getElementById(id).style.display = "block";
+  }
+
   btn.classList.add("active");
 }
 
@@ -28,9 +17,13 @@ function changeQty(name, price, change) {
   if (!cart[name]) cart[name] = { qty: 0, price };
   cart[name].qty += change;
 
-  if (cart[name].qty <= 0) delete cart[name];
+  if (cart[name].qty <= 0) {
+    delete cart[name];
+    document.getElementById(name).innerText = 0;
+  } else {
+    document.getElementById(name).innerText = cart[name].qty;
+  }
 
-  document.getElementById(name).innerText = cart[name]?.qty || 0;
   updateCart();
 }
 
@@ -38,7 +31,6 @@ function updateCart() {
   let items = document.getElementById("cartItems");
   let total = 0;
   let count = 0;
-
   items.innerHTML = "";
 
   for (let item in cart) {
@@ -47,9 +39,10 @@ function updateCart() {
     count += cart[item].qty;
 
     items.innerHTML += `
-      <div>
-        ${item} × ${cart[item].qty}
-        <span onclick="removeItem('${item}')">✖</span>
+      <div class="cart-item">
+        <span>${item} × ${cart[item].qty}</span>
+        <span>${cost} ₪</span>
+        <span class="remove-item" onclick="removeItem('${item}')">✖</span>
       </div>
     `;
   }
@@ -64,8 +57,12 @@ function removeItem(name) {
   updateCart();
 }
 
+function toggleCart() {
+  document.getElementById("cartDrawer").classList.toggle("open");
+}
+
 function sendWhatsApp() {
-  let text = "طلب جديد:\n";
+  let text = "طلب جديد من مجمدات المجد:\n\n";
   let total = 0;
 
   for (let item in cart) {
@@ -75,7 +72,13 @@ function sendWhatsApp() {
   }
 
   text += `\nالمجموع: ${total} ₪`;
+
   window.open(`https://wa.me/970599999999?text=${encodeURIComponent(text)}`);
+}
+
+function toggleMenu() {
+  const menu = document.getElementById("sideMenu");
+  menu.style.right = menu.style.right === "10px" ? "-200px" : "10px";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
