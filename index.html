@@ -10,12 +10,10 @@
 <body>
 
 <div class="side-menu-drawer" id="sideMenu">
-    <div class="drawer-header menu-orange-bg">
+    <div class="menu-orange-header">
         <span class="close-btn" onclick="toggleMenu()">×</span>
-        <div class="header-info">
-            <h3>مجمدات المجد</h3>
-            <p>نقدم لكم الأفضل</p>
-        </div>
+        <h3>مجمدات المجد</h3>
+        <p>نقدم لكم الأفضل</p>
     </div>
     <div class="menu-drawer-links">
         <p class="section-label">القائمة الرئيسية</p>
@@ -26,12 +24,11 @@
 </div>
 
 <div class="cart-drawer" id="cartDrawer">
-    <div class="drawer-header">
+    <div class="menu-orange-header">
         <span class="close-btn" onclick="toggleCart()">×</span>
         <h3>🛒 سلة الطلبات</h3>
     </div>
-    <div id="cartItems">
-        </div>
+    <div id="cartItems"></div>
     <div class="cart-footer">
         <p class="total">المجموع: <span id="cartTotal">0</span> ₪</p>
         <button class="whatsapp-send" id="sendBtn" onclick="sendWhatsApp()" disabled>السلة فارغة</button>
@@ -62,7 +59,6 @@
         <button class="tab" onclick="showCategory('meals', this)">🍱 وجبات</button>
         <button class="tab" onclick="showCategory('sandwich', this)">🥪 سندويشات</button>
     </div>
-
     <div class="category" id="all"></div>
     </section>
 
