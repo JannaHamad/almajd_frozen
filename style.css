@@ -1,162 +1,95 @@
-/* ===== 1. الإعدادات العامة ===== */
+/* ===== الإعدادات العامة ===== */
 html, body {
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
     font-family: "Tajawal", sans-serif;
     background: #f7f7f7;
-    scroll-behavior: smooth;
-    direction: rtl; /* اتجاه الكتابة من اليمين لليسار */
+    direction: rtl;
 }
 
-/* ===== 2. الهيدر (الشريط العلوي) ===== */
+/* ===== الهيدر ===== */
 .top-bar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 65px;
-    padding: 0 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    z-index: 1000;
+    position: fixed; top: 0; width: 100%; height: 70px;
+    padding: 0 20px; display: flex; justify-content: space-between;
+    align-items: center; background: white; z-index: 2000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     box-sizing: border-box;
 }
 
-.logo img {
-    height: 50px;
-    border-radius: 50%;
-}
+.logo img { height: 50px; border-radius: 50%; }
 
-.cart-menu-group {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+.cart-menu-group { display: flex; align-items: center; gap: 20px; }
 
-/* السلة (دائرة كاملة) */
 .cart-icon {
-    background: #ff6a00;
-    color: white;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    cursor: pointer;
+    background: #ff6a00; color: white; width: 45px; height: 45px;
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; position: relative; cursor: pointer;
 }
 
 .cart-icon span {
-    position: absolute;
-    top: -3px;
-    right: -3px;
-    font-size: 11px;
-    background: #d00000;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute; top: -5px; right: -5px; background: red;
+    color: white; width: 18px; height: 18px; border-radius: 50%;
+    font-size: 10px; display: flex; align-items: center; justify-content: center;
     border: 2px solid white;
 }
 
-.menu-btn {
-    font-size: 26px;
-    cursor: pointer;
-    color: #333;
-}
+/* ===== القائمة المنسدلة (المستطيل العريض) ===== */
+.menu-btn-container { position: relative; }
 
-/* ===== 3. القائمة الجانبية (مثل Jwsca) ===== */
-.side-menu {
-    position: fixed;
-    top: 0;
-    right: -285px; /* مخفية خارج الشاشة */
-    width: 280px;
-    height: 100%;
+.menu-btn { font-size: 28px; cursor: pointer; color: #333; }
+
+.dropdown-menu {
+    position: absolute;
+    top: 55px; /* تظهر أسفل الزر */
+    left: 0; /* محاذاة لليسار لتظهر تحت المجموعة */
+    width: 240px;
     background: white;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 2000;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    display: none; /* مخفية افتراضياً */
+    overflow: hidden;
+    z-index: 3000;
+    animation: fadeInDown 0.3s ease;
 }
 
-.side-menu.open {
-    right: 0 !important;
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* هيدر القائمة البرتقالي */
-.menu-header {
+.dropdown-menu.open { display: block; }
+
+.dropdown-header {
     background: #ff6a00;
-    padding: 35px 20px;
     color: white;
+    padding: 15px;
     text-align: center;
     position: relative;
 }
 
+.dropdown-header h4 { margin: 0; font-size: 18px; }
+
 .close-menu {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-    cursor: pointer;
-    line-height: 1;
+    position: absolute; left: 10px; top: 10px;
+    font-size: 20px; cursor: pointer;
 }
 
-.menu-shop-name { margin: 0; font-size: 22px; font-weight: bold; }
-.menu-shop-tag { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
-
-/* روابط القائمة */
-.menu-links { padding: 15px 0; }
-
-.menu-section-label {
-    color: #b0b0b0;
-    font-size: 13px;
-    margin: 10px 20px;
-    text-align: right;
+.dropdown-links a {
+    display: flex; align-items: center; gap: 10px;
+    padding: 15px 20px; text-decoration: none;
+    color: #444; border-bottom: 1px solid #f2f2f2;
+    transition: 0.3s;
 }
 
-.side-menu a {
-    display: flex;
-    align-items: center;
-    padding: 16px 20px;
-    text-decoration: none;
-    color: #444;
-    border-bottom: 1px solid #f2f2f2;
-    transition: background 0.2s;
-}
+.dropdown-links a:hover { background: #fff5ee; color: #ff6a00; }
 
-.side-menu a:hover { background: #fff8f3; }
-
-.link-text { flex: 1; text-align: right; font-size: 16px; font-weight: 500; }
-
-.link-icon {
-    order: 2; /* الأيقونة على اليسار */
-    margin-left: 15px;
-    color: #ff6a00; /* ملوّنة بلون الموقع */
-    font-size: 18px;
-    width: 25px;
-}
-
-.arrow-icon {
-    order: 0; /* السهم الصغير على اليمين */
-    font-size: 12px;
-    color: #d1d1d1;
-}
-
-/* ===== 4. الكوفر والمنتجات ===== */
+/* ===== الكوفر (النزول عن الهيدر) ===== */
 .hero {
     width: 100%;
-    height: 55vh;
+    height: 50vh;
     background: url("cover.jpg") center center no-repeat;
     background-size: cover;
-    margin-top: 65px;
+    margin-top: 85px; /* زيادة المسافة لينزل الكوفر عن الهيدر بوضوح */
+    border-radius: 0 0 20px 20px; /* لمسة جمالية للكوفر */
 }
 
 .menu {
@@ -296,3 +229,4 @@ html, body {
     .card-content { text-align: center; margin-top: 20px; }
     .card-title { justify-content: center; }
 }
+
