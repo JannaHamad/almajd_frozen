@@ -11,11 +11,8 @@ function toggleCart() { document.getElementById("cartDrawer").classList.toggle("
 function showCategory(id, btn) {
     document.querySelectorAll(".category").forEach(c => c.style.display = "none");
     document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-    if (id === "all") {
-        document.querySelectorAll(".category").forEach(c => c.style.display = "block");
-    } else {
-        document.getElementById(id).style.display = "block";
-    }
+    if (id === "all") document.querySelectorAll(".category").forEach(c => c.style.display = "block");
+    else document.getElementById(id).style.display = "block";
     btn.classList.add("active");
 }
 
