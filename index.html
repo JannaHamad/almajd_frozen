@@ -35,11 +35,36 @@
 </header>
 
 
-<!-- القائمة الجانبية -->
 <div class="side-menu" id="sideMenu">
-  <a href="#top" onclick="toggleMenu()">🏠 الرئيسية</a>
-  <a href="#menu" onclick="toggleMenu()">📋 قائمة الأصناف</a>
-  <a href="#location" onclick="toggleMenu()">📍 موقعنا</a>
+    <div class="menu-header">
+        <span class="close-menu" onclick="toggleMenu()">×</span>
+        <div class="menu-title-group">
+            <h3 class="menu-shop-name">مجمدات المجد</h3>
+            <p class="menu-shop-tag">أفضل أنواع المجمدات</p>
+        </div>
+    </div>
+
+    <div class="menu-links">
+        <p class="menu-section-label">القائمة الرئيسية</p>
+        
+        <a href="#top" onclick="toggleMenu()">
+            <span class="link-text">🏠الرئيسية</span>
+            <i class="fas fa-home link-icon"></i>
+            <i class="fas fa-chevron-left arrow-icon"></i>
+        </a>
+        
+        <a href="#menu" onclick="toggleMenu()">
+            <span class="link-text">📋قائمة الأصناف</span>
+            <i class="fas fa-utensils link-icon"></i>
+            <i class="fas fa-chevron-left arrow-icon"></i>
+        </a>
+        
+        <a href="#location" onclick="toggleMenu()">
+            <span class="link-text">📍موقعنا</span>
+            <i class="fas fa-map-marker-alt link-icon"></i>
+            <i class="fas fa-chevron-left arrow-icon"></i>
+        </a>
+    </div>
 </div>
 
 <!-- الكوفر -->
@@ -145,5 +170,6 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
