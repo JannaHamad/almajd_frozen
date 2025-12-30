@@ -5,150 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>مجمدات المجد</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<!-- السلة -->
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-header">
     <h3>🛒 سلة الطلبات</h3>
     <span class="close-cart" onclick="toggleCart()">✖</span>
   </div>
-
   <div id="cartItems"></div>
-
   <p class="total">المجموع: <span id="cartTotal">0</span> ₪</p>
-
   <button class="whatsapp" onclick="sendWhatsApp()">إرسال الطلب عبر واتساب</button>
 </div>
 
-<!-- الهيدر -->
 <header class="top-bar">
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <div class="logo">
     <img src="logo.png" alt="مجمدات المجد">
   </div>
-  <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div>
+  <div class="cart-icon-wrapper" onclick="toggleCart()">
+    <div class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount">0</span>
+    </div>
+  </div>
 </header>
 
-<!-- قائمة جانبية ثلاث شحطات -->
 <div class="side-menu" id="sideMenu">
   <a href="#top" onclick="toggleMenu()">🏠 الرئيسية</a>
   <a href="#menu" onclick="toggleMenu()">📋 قائمة الأصناف</a>
   <a href="#location" onclick="toggleMenu()">📍 موقعنا</a>
 </div>
 
-<!-- الكوفر -->
-<section class="hero">
-  <div class="overlay"></div>
-</section>
+<section class="hero"></section>
 
-<!-- القائمة -->
 <section id="menu" class="menu">
-  <h2>قائمة الأصناف</h2>
-  <hr class="menu-line">
+  <h2 class="section-title">قائمة الأصناف</h2>
 
   <div class="tabs">
     <button class="tab active" onclick="showCategory('all', this)">🛒 الكل</button>
     <button class="tab" onclick="showCategory('meat', this)">🥩 لحوم</button>
     <button class="tab" onclick="showCategory('veg', this)">🥦 خضار</button>
-    <button class="tab" onclick="showCategory('meals', this)">🍲 وجبات</button>
+    <button class="tab" onclick="showCategory('meals', this)">🍱 وجبات</button>
     <button class="tab" onclick="showCategory('sandwich', this)">🥪 سندويشات</button>
   </div>
 
-  <!-- الكل -->
-  <div class="category" id="all">
-    <!-- ستظهر جميع الأصناف تلقائياً -->
-  </div>
+  <div class="category" id="all"></div>
 
-  <!-- لحوم -->
   <div class="category" id="meat">
     <div class="items">
       <div class="item">
         <img src="chicken.jpg">
-        <h4>دجاج</h4>
+        <h4>دجاج طازج</h4>
         <p>25 ₪</p>
         <div class="qty">
-          <button onclick="changeQty('دجاج',25,-1)">-</button>
-          <span id="دجاج">0</span>
-          <button onclick="changeQty('دجاج',25,1)">+</button>
-        </div>
-      </div>
-      <div class="item">
-        <img src="wings.jpg">
-        <h4>أجنحة دجاج</h4>
-        <p>18 ₪</p>
-        <div class="qty">
-          <button onclick="changeQty('أجنحة دجاج',18,-1)">-</button>
-          <span id="أجنحة دجاج">0</span>
-          <button onclick="changeQty('أجنحة دجاج',18,1)">+</button>
+          <button onclick="changeQty('دجاج طازج',25,-1)">-</button>
+          <span id="دجاج طازج">0</span>
+          <button onclick="changeQty('دجاج طازج',25,1)">+</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- خضار -->
-  <div class="category" id="veg">
-    <div class="items">
-      <div class="item">
-        <img src="peas.jpg">
-        <h4>بازيلاء</h4>
-        <p>8 ₪</p>
-        <div class="qty">
-          <button onclick="changeQty('بازيلاء',8,-1)">-</button>
-          <span id="بازيلاء">0</span>
-          <button onclick="changeQty('بازيلاء',8,1)">+</button>
-        </div>
-      </div>
-      <div class="item">
-        <img src="molokhia.jpg">
-        <h4>ملوخية</h4>
-        <p>7 ₪</p>
-        <div class="qty">
-          <button onclick="changeQty('ملوخية',7,-1)">-</button>
-          <span id="ملوخية">0</span>
-          <button onclick="changeQty('ملوخية',7,1)">+</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- وجبات -->
   <div class="category" id="meals">
     <div class="items">
-      <div class="item">
-        <img src="tray.jpg">
-        <h4>وجبة صنية</h4>
-        <p>20 ₪</p>
-        <div class="qty">
-          <button onclick="changeQty('وجبة صنية',20,-1)">-</button>
-          <span id="وجبة صنية">0</span>
-          <button onclick="changeQty('وجبة صنية',20,1)">+</button>
+        <div class="item">
+          <img src="tray.jpg">
+          <h4>صينية وجبة عائلية</h4>
+          <p>45 ₪</p>
+          <div class="qty">
+            <button onclick="changeQty('صينية وجبة عائلية',45,-1)">-</button>
+            <span id="صينية وجبة عائلية">0</span>
+            <button onclick="changeQty('صينية وجبة عائلية',45,1)">+</button>
+          </div>
         </div>
       </div>
-    </div>
   </div>
-
-  <!-- سندويشات -->
+  
   <div class="category" id="sandwich">
     <div class="items">
-      <div class="item">
-        <img src="sandwich.jpg">
-        <h4>سندويش كلاسيك</h4>
-        <p>12 ₪</p>
-        <div class="qty">
-          <button onclick="changeQty('سندويش كلاسيك',12,-1)">-</button>
-          <span id="سندويش كلاسيك">0</span>
-          <button onclick="changeQty('سندويش كلاسيك',12,1)">+</button>
+        <div class="item">
+          <img src="sandwich.jpg">
+          <h4>سندويش سوبريم</h4>
+          <p>15 ₪</p>
+          <div class="qty">
+            <button onclick="changeQty('سندويش سوبريم',15,-1)">-</button>
+            <span id="سندويش سوبريم">0</span>
+            <button onclick="changeQty('سندويش سوبريم',15,1)">+</button>
+          </div>
         </div>
       </div>
-    </div>
   </div>
-
 </section>
 
-<!-- مستطيل أسفل الصفحة -->
-<footer class="address-box" id="location">
+<div class="location-header" id="location">
+    <h4>📍 موقعنا</h4>
+    <a href="https://maps.apple.com/?ll=32.137551,35.220417&q=Marked%20Location&t=h" target="_blank">
+      جماعين – الشارع الرئيسي – مقابل كازية الجماعيني
+    </a>
+</div>
+
+<footer class="address-box">
   <div class="footer-brand">
     <img src="logo.png">
     <h3>مجمدات المجد</h3>
@@ -158,16 +116,9 @@
   <div class="follow-us">
     <p>تابعنا</p>
     <div class="social-icons">
-      <a href="https://wa.me/970599999999" target="_blank">🟢</a>
-      <a href="https://www.facebook.com/share/17kVSba7L2/?mibextid=wwXIfr" target="_blank">🔵</a>
+      <a href="https://wa.me/970566706688" target="_blank" class="wa-icon"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/share/17kVSba7L2/" target="_blank" class="fb-icon"><i class="fab fa-facebook"></i></a>
     </div>
-  </div>
-
-  <div class="location-box">
-    <h4>📍 موقعنا</h4>
-    <a href="https://maps.apple.com/?ll=32.137551,35.220417&q=Marked%20Location&t=h" target="_blank">
-      جماعين – الشارع الرئيسي – مقابل كازية الجماعيني
-    </a>
   </div>
 </footer>
 
