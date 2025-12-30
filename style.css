@@ -1,62 +1,65 @@
-html, body { margin:0; padding:0; font-family:"Tajawal", sans-serif; background:#f7f7f7; }
+html, body { margin:0; padding:0; font-family:"Tajawal", sans-serif; background:#f7f7f7; scroll-behavior: smooth; }
 
 /* الهيدر */
 .top-bar {
-  position: fixed; top:0; width:100%; height:55px; padding:0 15px;
+  position: fixed; top:0; width:100%; height:65px; padding:0 15px;
   display:flex; justify-content:space-between; align-items:center;
-  background: rgba(255,255,255,0.85); backdrop-filter:blur(6px); z-index:1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  background: white; z-index:1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
 
-.logo img { height:45px; border-radius:50%; }
+.logo img { height:50px; border-radius:50%; }
 
+/* إصلاح السلة لتكون دائرة كاملة */
+.cart-icon-wrapper {
+    display: flex; align-items: center; justify-content: center;
+}
 .cart-icon {
-  background:#e85c00; color:white; padding:6px 10px;
-  border-radius:50%; font-size:18px; cursor:pointer;
+  background:#ff6a00; color:white; width: 45px; height: 45px;
+  border-radius:50%; display: flex; align-items: center; justify-content: center;
+  cursor:pointer; position: relative;
 }
-.cart-icon span { font-size:12px; background:white; color:#e85c00; border-radius:50%; padding:2px 6px; margin-right:4px; }
-
-.menu-btn { font-size:22px; cursor:pointer; }
-
-/* قائمة جانبية */
-.side-menu { position:fixed; top:60px; right:-200px; width:180px; background:white;
-  border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.15); padding:10px; transition:0.3s; z-index:1500;
+.cart-icon span { 
+    position: absolute; top: -5px; right: -5px;
+    font-size:11px; background:red; color:white; 
+    border-radius:50%; width: 20px; height: 20px;
+    display: flex; align-items: center; justify-content: center;
 }
-.side-menu a { display:block; padding:10px; text-decoration:none; color:#333; }
 
 /* الكوفر */
-.hero { width:100%; height:100vh; background:url("cover.jpg") center center no-repeat; background-size:cover; margin-top:55px; }
+.hero { width:100%; height:60vh; background:url("cover.jpg") center center no-repeat; background-size:cover; margin-top:65px; }
 
 /* القائمة */
-.menu { padding:20px; }
-.menu h2 { text-align:center; margin-bottom:5px; }
-.menu-line { width:60px; height:3px; background:#ff6a00; margin:5px auto 20px auto; border:none; }
+.menu { padding: 10px 20px; background: white; margin-top: 0; }
+.section-title {
+    text-align: center; margin: 10px 0; padding-bottom: 8px;
+    border-bottom: 3px solid #ff6a00; display: inline-block;
+    width: 100%; font-size: 22px;
+}
 
-.tabs { display:flex; justify-content:center; gap:10px; margin-bottom:20px; }
-.tab { padding:10px 18px; border-radius:20px; border:none; cursor:pointer; background:#eee; }
+.tabs { display:flex; justify-content:center; gap:8px; margin: 20px 0; overflow-x: auto; padding-bottom: 5px; }
+.tab { padding:8px 15px; border-radius:20px; border:none; cursor:pointer; background:#f0f0f0; white-space: nowrap; }
 .tab.active { background:#ff6a00; color:white; }
 
-.category { display:none; }
-.items { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:15px; }
-.item { background:white; padding:10px; border-radius:15px; text-align:center; }
-.item img { width:100%; aspect-ratio:1/1; object-fit:contain; }
-.qty { display:flex; justify-content:center; gap:10px; }
-.qty button { background:#ff6a00; border:none; color:white; width:30px; height:30px; border-radius:50%; }
+/* الموقع فوق الصندوق */
+.location-header { text-align: center; padding: 20px; background: #fff; margin-top: 20px; }
+.location-header a { text-decoration: none; color: #333; font-weight: bold; }
 
-/* السلة */
-.cart-drawer { position:fixed; top:0; left:-100%; width:300px; height:100%; background:white; padding:20px; transition:0.3s; z-index:2000; }
+/* فوتر - الصندوق البرتقالي */
+.address-box { background:#ff6a00; color:white; padding:30px 20px; }
+.footer-brand { 
+    display:flex; flex-direction:column; align-items:center; 
+    text-align:center; margin-bottom: 20px;
+}
+.footer-brand img { width:70px; border-radius:50%; margin-bottom: 10px; border: 2px solid white; }
+.footer-brand h3 { margin: 5px 0; font-size: 24px; }
+
+.follow-us { text-align:center; }
+.follow-us p { margin-bottom: 10px; font-weight: bold; }
+.social-icons { display: flex; justify-content: center; gap: 20px; }
+.social-icons a { font-size: 30px; color: white; text-decoration: none; transition: 0.3s; }
+.social-icons a:hover { transform: scale(1.2); }
+
+/* السلة الجانبية */
+.cart-drawer { position:fixed; top:0; left:-100%; width:300px; height:100%; background:white; padding:20px; transition:0.3s; z-index:2000; box-shadow: 2px 0 10px rgba(0,0,0,0.2); }
 .cart-drawer.open { left:0; }
-.cart-header { display:flex; justify-content:space-between; }
-.cart-item { display:flex; justify-content:space-between; margin-bottom:10px; }
-.remove-item { color:red; cursor:pointer; }
-.whatsapp { width:100%; margin-top:15px; background:#25d366; border:none; color:white; padding:15px; border-radius:20px; }
-
-/* مستطيل أسفل الصفحة */
-.address-box { background:#ff6a00; color:white; padding:25px; margin-top:40px; }
-.footer-brand { display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center; }
-.footer-brand img { width:60px; border-radius:50%; }
-.footer-brand h3 { margin:0; }
-.footer-brand p { margin:0; }
-.follow-us { margin-top:15px; text-align:center; }
-.social-icons a { font-size:20px; margin:0 5px; text-decoration:none; color:white; }
-.location-box { margin-top:15px; text-align:center; }
