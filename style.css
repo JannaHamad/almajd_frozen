@@ -249,19 +249,21 @@ html, body {
 }
 
 /* ================= RESPONSIVE ================= */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .hero {
+    height: 110vh;
+    background-size: contain;
+  }
+
   .overlay h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .overlay p {
     font-size: 16px;
   }
-
-  .cart-drawer {
-    width: 85%;
-  }
 }
+
 
 
 
