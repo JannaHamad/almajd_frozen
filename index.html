@@ -63,13 +63,13 @@
     <div class="category" id="meat">
         <div class="items-grid">
             <div class="product-card">
-                <div class="img-container"><img src="chicken.jpg" alt="دجاج"></div>
-                <h4>دجاج</h4>
+                <div class="img-container"><img src="chicken.jpg"></div>
+                <h4>دجاج طازج</h4>
                 <p class="price">25 ₪</p>
                 <div class="qty-control">
-                    <button onclick="changeQty('دجاج', 25, 1)">+</button>
+                    <button onclick="changeQty('دجاج طازج', 25, 1)">+</button>
                     <span id="دجاج طازج">0</span>
-                    <button onclick="changeQty('دجاج', 25, -1)">-</button>
+                    <button onclick="changeQty('دجاج طازج', 25, -1)">-</button>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
     <div class="category" id="veg">
         <div class="items-grid">
             <div class="product-card">
-                <div class="img-container"><img src="peas.jpg" alt="بازيلاء"></div>
+                <div class="img-container"><img src="peas.jpg"></div>
                 <h4>بازيلاء</h4>
                 <p class="price">10 ₪</p>
                 <div class="qty-control">
@@ -93,7 +93,7 @@
     <div class="category" id="sandwich">
         <div class="items-grid">
             <div class="product-card">
-                <div class="img-container"><img src="arayes.jpg" alt="عرايس"></div>
+                <div class="img-container"><img src="arayes.jpg"></div>
                 <h4>عرايس</h4>
                 <p class="price">15 ₪</p>
                 <div class="qty-control">
@@ -103,18 +103,29 @@
                 </div>
             </div>
             <div class="product-card">
-                <div class="img-container"><img src="burger.jpg" alt="برغر"></div>
+                <div class="img-container"><img src="burger.jpg"></div>
                 <h4>برغر</h4>
                 <p class="price">20 ₪</p>
                 <div class="qty-control">
                     <button onclick="changeQty('برغر', 20, 1)">+</button>
-                    <span id="برغر بقري">0</span>
+                    <span id="برغر">0</span>
                     <button onclick="changeQty('برغر', 20, -1)">-</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<div class="location-card-container" id="location">
+    <div class="address-card">
+        <div class="card-content">
+            <h4 class="card-title">العنوان</h4>
+            <p class="card-text">جماعين – الشارع الرئيسي – مقابل كازية الجماعيني</p>
+            <a href="https://maps.apple.com/?ll=32.137551,35.220417&q=Location&t=h" target="_blank" class="maps-link">افتح في خرائط جوجل ←</a>
+        </div>
+        <div class="card-icon-box"><i class="fas fa-map-marker-alt"></i></div>
+    </div>
+</div>
 
 <footer class="address-box">
     <div class="footer-brand">
