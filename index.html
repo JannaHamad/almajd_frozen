@@ -17,7 +17,9 @@
   </div>
 
   <div id="cartItems"></div>
+
   <p class="total">المجموع: <span id="cartTotal">0</span> ₪</p>
+
   <button class="whatsapp" onclick="sendWhatsApp()">إرسال الطلب عبر واتساب</button>
 </div>
 
@@ -35,9 +37,11 @@
 <!-- الكوفر -->
 <section class="hero">
   <div class="overlay">
-    <h1>مجمدات المجد</h1>
-    <p>أفضل أنواع المجمدات الطازجة</p>
-    <button onclick="scrollToMenu()">اطلب الآن</button>
+    <h1 class="hero-title">مجمدات المجد</h1>
+    <p class="hero-sub">
+      مجمدات المجد<br>
+      كل ما هو لذيذ لدينا
+    </p>
   </div>
 </section>
 
@@ -45,11 +49,12 @@
 <section id="menu" class="menu">
   <h2>قائمة الأصناف</h2>
 
+  <!-- التابات -->
   <div class="tabs">
-    <button class="tab active" onclick="showCategory('all', this)">الكل</button>
-    <button class="tab" onclick="showCategory('meat', this)">لحوم</button>
-    <button class="tab" onclick="showCategory('veg', this)">خضار</button>
-    <button class="tab" onclick="showCategory('meals', this)">وجبات</button>
+    <button class="tab active" onclick="showCategory('all', this)">🛒 الكل</button>
+    <button class="tab" onclick="showCategory('meat', this)">🥩 لحوم</button>
+    <button class="tab" onclick="showCategory('veg', this)">🥦 خضار</button>
+    <button class="tab" onclick="showCategory('meals', this)">🍔 وجبات</button>
   </div>
 
   <!-- لحوم -->
@@ -134,6 +139,12 @@
   </div>
 
 </section>
+
+<!-- العنوان -->
+<footer class="address-box">
+  📍 جماعين الشارع الرئيسي مقابل كازية الجماعيني للمحروقات  
+  بجانب سوبر ماركت الرنتيسي
+</footer>
 
 <script src="script.js"></script>
 </body>
