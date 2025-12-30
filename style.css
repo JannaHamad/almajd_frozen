@@ -1,14 +1,14 @@
-/* ===== الإعدادات العامة ===== */
+/* ===== 1. الإعدادات العامة ===== */
 html, body {
     margin: 0;
     padding: 0;
     font-family: "Tajawal", sans-serif;
     background: #f7f7f7;
     scroll-behavior: smooth;
-    direction: rtl;
+    direction: rtl; /* اتجاه الكتابة من اليمين لليسار */
 }
 
-/* ===== الهيدر ===== */
+/* ===== 2. الهيدر (الشريط العلوي) ===== */
 .top-bar {
     position: fixed;
     top: 0;
@@ -24,28 +24,23 @@ html, body {
     box-sizing: border-box;
 }
 
-/* اللوجو */
-.logo {
-    display: flex;
-    align-items: center;
-}
 .logo img {
     height: 50px;
     border-radius: 50%;
 }
 
-/* السلة والثلاث خطوط */
 .cart-menu-group {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+/* السلة (دائرة كاملة) */
 .cart-icon {
     background: #ff6a00;
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -56,10 +51,10 @@ html, body {
 
 .cart-icon span {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -3px;
+    right: -3px;
     font-size: 11px;
-    background: red;
+    background: #d00000;
     color: white;
     border-radius: 50%;
     width: 20px;
@@ -71,49 +66,102 @@ html, body {
 }
 
 .menu-btn {
-    font-size: 28px;
+    font-size: 26px;
     cursor: pointer;
     color: #333;
 }
 
-/* ===== القائمة الجانبية ===== */
+/* ===== 3. القائمة الجانبية (مثل Jwsca) ===== */
 .side-menu {
     position: fixed;
-    top: 70px;
-    right: -250px;
-    width: 200px;
+    top: 0;
+    right: -285px; /* مخفية خارج الشاشة */
+    width: 280px;
+    height: 100%;
     background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    padding: 10px;
-    transition: 0.3s;
-    z-index: 1500;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2000;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu.open {
+    right: 0 !important;
+}
+
+/* هيدر القائمة البرتقالي */
+.menu-header {
+    background: #ff6a00;
+    padding: 35px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.close-menu {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.menu-shop-name { margin: 0; font-size: 22px; font-weight: bold; }
+.menu-shop-tag { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
+
+/* روابط القائمة */
+.menu-links { padding: 15px 0; }
+
+.menu-section-label {
+    color: #b0b0b0;
+    font-size: 13px;
+    margin: 10px 20px;
+    text-align: right;
 }
 
 .side-menu a {
-    display: block;
-    padding: 12px;
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
     text-decoration: none;
-    color: #333;
-    border-bottom: 1px solid #eee;
+    color: #444;
+    border-bottom: 1px solid #f2f2f2;
+    transition: background 0.2s;
 }
 
-.side-menu a:last-child { border-bottom: none; }
+.side-menu a:hover { background: #fff8f3; }
 
-/* ===== قسم الكوفر ===== */
+.link-text { flex: 1; text-align: right; font-size: 16px; font-weight: 500; }
+
+.link-icon {
+    order: 2; /* الأيقونة على اليسار */
+    margin-left: 15px;
+    color: #ff6a00; /* ملوّنة بلون الموقع */
+    font-size: 18px;
+    width: 25px;
+}
+
+.arrow-icon {
+    order: 0; /* السهم الصغير على اليمين */
+    font-size: 12px;
+    color: #d1d1d1;
+}
+
+/* ===== 4. الكوفر والمنتجات ===== */
 .hero {
     width: 100%;
     height: 55vh;
     background: url("cover.jpg") center center no-repeat;
     background-size: cover;
-    margin-top: 65px; /* ملتصق بالهيدر */
+    margin-top: 65px;
 }
 
-/* ===== قسم قائمة الأصناف ===== */
 .menu {
     padding: 20px;
     background: white;
-    margin-top: 0;
     text-align: center;
 }
 
@@ -124,10 +172,8 @@ html, body {
     display: inline-block;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
 }
 
-/* التبويبات */
 .tabs {
     display: flex;
     justify-content: center;
@@ -138,23 +184,15 @@ html, body {
 }
 
 .tab {
-    padding: 10px 20px;
+    padding: 10px 18px;
     border-radius: 25px;
     border: none;
     cursor: pointer;
     background: #f0f0f0;
-    white-space: nowrap;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-.tab.active {
-    background: #ff6a00;
-    color: white;
-}
-
-/* عرض المنتجات */
-.category { display: none; padding: 10px; }
+.tab.active { background: #ff6a00; color: white; }
 
 .items {
     display: grid;
@@ -166,163 +204,95 @@ html, body {
     background: white;
     padding: 15px;
     border-radius: 15px;
-    text-align: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     border: 1px solid #eee;
 }
 
-.item img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-/* الكمية */
-.qty {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin-top: 10px;
-}
+.item img { width: 100%; aspect-ratio: 1/1; object-fit: contain; }
 
 .qty button {
     background: #ff6a00;
     border: none;
     color: white;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    font-size: 18px;
     cursor: pointer;
 }
 
-/* ===== بطاقة الموقع ===== */
+/* ===== 5. بطاقة الموقع (تصميم مطور) ===== */
 .location-card-container {
-    padding: 30px 15px;
+    padding: 40px 15px;
     display: flex;
     justify-content: center;
-    background-color: #f7f7f7;
 }
 
 .address-card {
     background: #ffffff;
     width: 100%;
-    max-width: 500px;
-    border-radius: 20px;
-    padding: 20px;
+    max-width: 550px;
+    border-radius: 24px;
+    padding: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f0f0;
 }
 
 .card-content { flex: 1; text-align: right; }
-.card-title { margin: 0 0 5px 0; font-size: 20px; color: #1a1c24; }
-.card-text { margin: 0 0 15px 0; color: #666; font-size: 15px; }
+.card-title { 
+    margin: 0 0 10px 0; font-size: 22px; color: #1a1c24; 
+    display: flex; align-items: center; gap: 10px;
+}
+
+.map-marker-small { color: #2b5aed; }
+
+.card-text { margin: 0 0 15px 0; color: #555; font-size: 15px; line-height: 1.6; }
+
 .maps-link {
-    text-decoration: none;
-    color: #2b5aed;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+    text-decoration: none; color: #2b5aed; font-weight: bold;
+    display: inline-flex; align-items: center; gap: 8px;
 }
 
-.icon-bg {
-    background-color: #f0f4ff;
-    width: 55px; height: 55px;
-    border-radius: 15px;
-    display: flex; align-items: center; justify-content: center;
-    margin-right: 15px;
-}
-.icon-bg i { color: #2b5aed; font-size: 22px; }
-
-/* ===== الفوتر ===== */
+/* ===== 6. الفوتر ===== */
 .address-box {
     background: #ff6a00;
     color: white;
-    padding: 30px 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
-.footer-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
 .footer-brand img {
-    width: 70px;
+    width: 80px;
     border-radius: 50%;
     border: 3px solid white;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.footer-brand h3 { margin: 5px 0; font-size: 22px; }
-.footer-brand p { margin: 0; font-size: 14px; opacity: 0.9; }
+.social-icons { display: flex; justify-content: center; gap: 25px; margin-top: 20px; }
+.social-icons a { font-size: 30px; color: white; transition: 0.3s; }
+.social-icons a:hover { transform: translateY(-5px); }
 
-.follow-us p { margin-bottom: 10px; font-weight: bold; }
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-.social-icons a {
-    font-size: 28px;
-    color: white;
-    transition: 0.3s;
-}
-.social-icons a.wa-icon { color: #25d366; }
-.social-icons a.fb-icon { color: #1877f2; }
-
-.social-icons a:hover { transform: translateY(-3px); }
-
-/* ===== السلة الجانبية ===== */
+/* ===== 7. السلة الجانبية (Drawer) ===== */
 .cart-drawer {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 300px;
+    width: 310px;
     height: 100%;
     background: white;
-    padding: 20px;
+    padding: 25px;
     transition: 0.3s;
-    z-index: 2000;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    box-sizing: border-box;
+    z-index: 2500;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.1);
 }
+
 .cart-drawer.open { left: 0; }
-.cart-header { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-.cart-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee; }
-.remove-item { color: red; cursor: pointer; }
-.whatsapp {
-    width: 100%;
-    margin-top: 20px;
-    background: #25d366;
-    border: none;
-    color: white;
-    padding: 12px;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-}
 
-/* ===== استجابة الهواتف ===== */
-@media (max-width: 768px) {
+/* تحسينات الاستجابة للهاتف */
+@media (max-width: 600px) {
     .address-card { flex-direction: column-reverse; text-align: center; }
-    .card-content { margin-top: 15px; }
-    .icon-bg { margin-right: 0; }
-    .hero { height: 45vh; }
-    .tabs { gap: 5px; padding: 10px 2px; }
-    .cart-icon { width: 45px; height: 45px; }
-    .menu-btn { font-size: 26px; }
-}
-
-@media (max-width: 480px) {
-    .items { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
-    .hero { height: 35vh; }
+    .card-content { text-align: center; margin-top: 20px; }
+    .card-title { justify-content: center; }
 }
