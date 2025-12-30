@@ -9,18 +9,8 @@
 </head>
 <body>
 
-<div class="cart-drawer" id="cartDrawer">
-    <div class="drawer-header">
-        <span class="close-btn" onclick="toggleCart()">×</span>
-        <h3>🛒 سلة الطلبات</h3>
-    </div>
-    <div id="cartItems"></div>
-    <p class="total">المجموع: <span id="cartTotal">0</span> ₪</p>
-    <button class="whatsapp-send" onclick="sendWhatsApp()">إرسال الطلب عبر واتساب</button>
-</div>
-
 <div class="side-menu-drawer" id="sideMenu">
-    <div class="drawer-header menu-bg">
+    <div class="drawer-header menu-orange-bg">
         <span class="close-btn" onclick="toggleMenu()">×</span>
         <div class="header-info">
             <h3>مجمدات المجد</h3>
@@ -28,15 +18,29 @@
         </div>
     </div>
     <div class="menu-drawer-links">
-        <a href="#top" onclick="toggleMenu()"><i class="fas fa-home"></i> الرئيسية</a>
-        <a href="#menu" onclick="toggleMenu()"><i class="fas fa-utensils"></i> قائمة الأصناف</a>
-        <a href="#location" onclick="toggleMenu()"><i class="fas fa-map-marker-alt"></i> موقعنا</a>
+        <p class="section-label">القائمة الرئيسية</p>
+        <a href="#top" onclick="toggleMenu()"><span class="link-text">الرئيسية</span> <i class="fas fa-home"></i></a>
+        <a href="#menu" onclick="toggleMenu()"><span class="link-text">قائمة الأصناف</span> <i class="fas fa-utensils"></i></a>
+        <a href="#location" onclick="toggleMenu()"><span class="link-text">موقعنا</span> <i class="fas fa-map-marker-alt"></i></a>
+    </div>
+</div>
+
+<div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+        <span class="close-btn" onclick="toggleCart()">×</span>
+        <h3>🛒 سلة الطلبات</h3>
+    </div>
+    <div id="cartItems">
+        </div>
+    <div class="cart-footer">
+        <p class="total">المجموع: <span id="cartTotal">0</span> ₪</p>
+        <button class="whatsapp-send" id="sendBtn" onclick="sendWhatsApp()" disabled>السلة فارغة</button>
     </div>
 </div>
 
 <header class="top-bar">
     <div class="logo">
-        <img src="logo.png" alt="لوجو">
+        <img src="logo.png" alt="مجمدات المجد">
     </div>
     <div class="cart-menu-group">
         <div class="cart-icon" onclick="toggleCart()">
@@ -51,7 +55,6 @@
 
 <section id="menu" class="menu">
     <h2 class="section-title">قائمة الأصناف</h2>
-
     <div class="tabs">
         <button class="tab active" onclick="showCategory('all', this)">🛒 الكل</button>
         <button class="tab" onclick="showCategory('meat', this)">🥩 لحوم</button>
@@ -61,32 +64,16 @@
     </div>
 
     <div class="category" id="all"></div>
-    
-    <div class="category" id="meat">
-        <div class="items">
-            <div class="item">
-                <img src="chicken.jpg">
-                <h4>دجاج طازج</h4>
-                <p>25 ₪</p>
-                <div class="qty">
-                    <button onclick="changeQty('دجاج طازج',25,-1)">-</button>
-                    <span id="دجاج طازج">0</span>
-                    <button onclick="changeQty('دجاج طازج',25,1)">+</button>
-                </div>
-            </div>
-        </div>
-    </div>
     </section>
 
 <div class="location-card-container" id="location">
     <div class="address-card">
         <div class="card-content">
-            <h4 class="card-title">العنوان <i class="fas fa-map-marker-alt"></i></h4>
-            <p class="card-text">جماعين – الشارع الرئيسي – مقابل كازية الجماعيني للمحروقات</p>
-            <a href="https://maps.apple.com/?ll=32.137551,35.220417&q=Marked%20Location&t=h" target="_blank" class="maps-link">
-                افتح في الخرائط <i class="fas fa-arrow-left"></i>
-            </a>
+            <h4 class="card-title">العنوان</h4>
+            <p class="card-text">جماعين – الشارع الرئيسي – مقابل كازية الجماعيني</p>
+            <a href="https://maps.apple.com/?ll=32.137551,35.220417&q=Location&t=h" target="_blank" class="maps-link">افتح في خرائط جوجل ←</a>
         </div>
+        <div class="card-icon-box"><i class="fas fa-map-marker-alt"></i></div>
     </div>
 </div>
 
@@ -94,14 +81,12 @@
     <div class="footer-brand">
         <img src="logo.png">
         <h3>مجمدات المجد</h3>
-        <p>نقدم لكم أفضل أنواع المجمدات والأطعمة</p>
+        <p>نقدم لكم أفضل أنواع المجمدات</p>
     </div>
-    <div class="follow-us">
-        <p>تابعنا</p>
-        <div class="social-icons">
-            <a href="https://wa.me/970566706688" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/share/17kVSba7L2/" target="_blank"><i class="fab fa-facebook"></i></a>
-        </div>
+    <div class="social-icons">
+        <p style="width:100%; margin-bottom:10px;">تابعنا</p>
+        <a href="https://wa.me/970566706688" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/share/17kVSba7L2/" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
 </footer>
 
