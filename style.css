@@ -1,43 +1,33 @@
 html, body { margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; background: #f7f7f7; direction: rtl; scroll-behavior: smooth; }
 
-/* اللوجو البيضاوي */
-.oval-logo { height: 60px; width: 90px; object-fit: cover; border-radius: 50% / 50%; border: 2px solid #ff6a00; }
+/* الهيدر واللوجو المصغر والبيضاوي */
+.top-bar { position: fixed; top: 0; width: 100%; height: 65px; background: white; display: flex; justify-content: space-between; align-items: center; padding: 0 15px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box; }
+.logo-container { height: 100%; display: flex; align-items: center; }
+.main-logo-oval { height: 45px; width: auto; max-width: 90px; object-fit: contain; border-radius: 50% / 50%; border: 1px solid #ff6a00; padding: 2px; }
 
-.top-bar { position: fixed; top: 0; width: 100%; height: 80px; background: white; display: flex; justify-content: space-between; align-items: center; padding: 0 15px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box; }
-.cart-menu-group { display: flex; align-items: center; gap: 15px; }
-
-/* السلة والمينو من الشمال */
+/* القوائم الجانبية من اليسار */
 .cart-drawer, .side-menu-drawer { position: fixed; top: 0; left: -100%; width: 300px; height: 100%; background: white; z-index: 2000; transition: 0.4s ease; box-shadow: 5px 0 15px rgba(0,0,0,0.1); }
 .cart-drawer.open, .side-menu-drawer.open { left: 0; }
+.menu-orange-header { background: #ff6a00; color: white; padding: 25px 20px; position: relative; }
+.close-btn { position: absolute; top: 12px; left: 12px; font-size: 28px; cursor: pointer; color: white; }
 
-.menu-orange-header { background: #ff6a00; color: white; padding: 30px 20px; position: relative; }
-.close-btn { position: absolute; top: 15px; left: 15px; font-size: 30px; cursor: pointer; color: white; }
+/* ترتيب المنيو تحت بعضه */
+.menu-list-container { padding: 20px; }
+.list-label { color: #999; font-size: 14px; margin-bottom: 15px; font-weight: bold; }
+.clean-menu-list { list-style: none; padding: 0; margin: 0; }
+.clean-menu-list li { border-bottom: 1px solid #f2f2f2; }
+.clean-menu-list li a { display: flex; align-items: center; padding: 18px 5px; text-decoration: none; color: #333; font-size: 18px; font-weight: bold; }
+.clean-menu-list li a i { margin-left: 15px; color: #ff6a00; width: 25px; text-align: center; }
 
-/* المنتجات */
+/* شبكة المنتجات وتنسيق الصور */
 .items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
-.product-card { background: white; border-radius: 15px; padding: 10px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-.img-container { width: 100%; height: 120px; display: flex; justify-content: center; align-items: center; }
+.product-card { background: white; border-radius: 12px; padding: 10px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+.img-container { width: 100%; height: 110px; display: flex; justify-content: center; align-items: center; overflow: hidden; }
 .img-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-.qty-control { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 10px; }
-.qty-control button { background: #ff6a00; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-weight: bold; }
+/* زر الواتساب */
+.whatsapp-send { background: #25D366; color: white; border: none; padding: 15px; width: 90%; margin: 10px auto; border-radius: 12px; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.whatsapp-send:disabled { background: #ccc; }
 
-/* أزرار التواصل وألوانها */
-.whatsapp-send { background: #25D366; color: white; border: none; padding: 18px; width: 90%; margin: 15px auto; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 18px; font-weight: bold; border-radius: 12px; cursor: pointer; }
-.whatsapp-send:disabled { background: #ccc; cursor: not-allowed; }
-.fa-whatsapp { color: #25D366; }
-.fa-facebook { color: #1877F2; }
-.social-icons a { font-size: 35px; margin: 0 10px; text-decoration: none; }
-
-/* العنوان (تمت استعادته) */
-.location-card-container { padding: 40px 15px; display: flex; justify-content: center; }
-.address-card { background: white; width: 100%; max-width: 500px; border-radius: 20px; padding: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-.card-icon-box { background: #f0f4ff; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #2b5aed; font-size: 22px; }
-
-.hero { width: 100%; height: 40vh; background: url('cover.jpg') center/cover no-repeat; margin-top: 80px; }
-.section-title { text-align: center; padding: 20px; border-bottom: 2px solid #ff6a00; width: fit-content; margin: 20px auto; }
-.tabs { display: flex; justify-content: center; gap: 5px; padding: 10px; overflow-x: auto; white-space: nowrap; }
-.tab { padding: 8px 15px; border: 1px solid #ddd; border-radius: 20px; background: white; cursor: pointer; font-weight: bold; }
-.tab.active { background: #ff6a00; color: white; border-color: #ff6a00; }
-
+.hero { width: 100%; height: 40vh; background: url('cover.jpg') center/cover no-repeat; margin-top: 65px; border-radius: 0 0 20px 20px; }
 .address-box { background: #ff6a00; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
