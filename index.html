@@ -67,6 +67,8 @@
         <button class="tab" onclick="showCategory('meals', this)">🍱 وجبات</button>
         <button class="tab" onclick="showCategory('sandwich', this)">🥪 سندويشات</button>
         <button class="tab" onclick="showCategory('canned-sauces', this)">🥫 معلبات وصوصات</button>
+        <button class="tab" onclick="showCategory('grocery', this)">🛒 مواد تموينية</button>
+
 
     </div>
 
@@ -650,6 +652,101 @@
         </div>
     </div>
 
+      <!-- قسم مواد تموينية -->
+<div class="tab-content" id="grocery">
+    <div class="items-grid">
+
+        <div class="product-card">
+            <div class="img-container"><img src="جميدكو.jpeg" alt="جميدكو"></div>
+            <h4>جميدكو</h4>
+            <p class="price">14 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('جميدكو', 14, 1)">+</button>
+                <span id="جميدكو">0</span>
+                <button onclick="changeQty('جميدكو', 14, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="خل_أبيض.jpeg" alt="خل أبيض"></div>
+            <h4>خل أبيض</h4>
+            <p class="price">10 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('خل أبيض', 10, 1)">+</button>
+                <span id="خل أبيض">0</span>
+                <button onclick="changeQty('خل أبيض', 10, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="زيت_دوار_الشمس.jpeg" alt="زيت دوار الشمس"></div>
+            <h4>زيت دوار الشمس</h4>
+            <p class="price">32 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('زيت دوار الشمس', 32, 1)">+</button>
+                <span id="زيت دوار الشمس">0</span>
+                <button onclick="changeQty('زيت دوار الشمس', 32, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="شعيرية.jpeg" alt="شعيرية"></div>
+            <h4>شعيرية</h4>
+            <p class="price">3 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('شعيرية', 3, 1)">+</button>
+                <span id="شعيرية">0</span>
+                <button onclick="changeQty('شعيرية', 3, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="طحينة_كيلو.jpeg" alt="طحينة كيلو"></div>
+            <h4>طحينة كيلو</h4>
+            <p class="price">20 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('طحينة كيلو', 20, 1)">+</button>
+                <span id="طحينة كيلو">0</span>
+                <button onclick="changeQty('طحينة كيلو', 20, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="طحينة_نص_كيلو.jpeg" alt="طحينة نص كيلو"></div>
+            <h4>طحينة نص كيلو</h4>
+            <p class="price">10 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('طحينة نص كيلو', 10, 1)">+</button>
+                <span id="طحينة نص كيلو">0</span>
+                <button onclick="changeQty('طحينة نص كيلو', 10, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="ماجي.jpeg" alt="ماجي"></div>
+            <h4>ماجي</h4>
+            <p class="price">13 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('ماجي', 13, 1)">+</button>
+                <span id="ماجي">0</span>
+                <button onclick="changeQty('ماجي', 13, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="أرز_البستان_1KG.jpeg" alt="أرز البستان 1KG"></div>
+            <h4>أرز البستان 1KG</h4>
+            <p class="price">8 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('أرز البستان 1KG', 8, 1)">+</button>
+                <span id="أرز البستان 1KG">0</span>
+                <button onclick="changeQty('أرز البستان 1KG', 8, -1)">-</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
       <!-- قسم الوجبات -->
 <div class="tab-content" id="meals">
   <div class="items-grid">
@@ -1156,6 +1253,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
