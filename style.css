@@ -192,10 +192,11 @@ html, body {
     text-align: center; 
     box-shadow: 0 2px 6px rgba(0,0,0,0.05); 
 }
-.img-container img { 
-    max-width: 100%; 
-    height: 110px; 
-    object-fit: contain; 
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* الصور تملأ المستطيل بالكامل */
 }
 
 /* --- التابس --- */
@@ -295,4 +296,29 @@ html, body {
     margin: 0;
     font-weight: bold;
     color: #000; /* كلمة العنوان سوداء غامقة */
+}
+
+/* --- الأقسام --- */
+/* قسم الخضار */
+.vegetables {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 10px;
+}
+
+/* قسم الصوصات والمعلبات */
+.sauces-canned {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 10px;
+}
+
+/* قسم اللحوم والجمبري */
+.meats-seafood {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 10px;
 }
