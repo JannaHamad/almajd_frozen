@@ -35,18 +35,20 @@ html, body {
 .cart-menu-group {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .menu-btn {
-    font-size: 28px;
+    font-size: 32px; /* أكبر */
     cursor: pointer;
+    color: #ff6a00; /* لون مناسب للتصميم */
 }
 
 .cart-icon {
     position: relative;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 32px; /* أكبر */
+    color: #ff6a00; /* لون مناسب */
 }
 
 #cartCount {
@@ -56,8 +58,8 @@ html, body {
     background: #ff6a00;
     color: white;
     border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 13px;
+    padding: 3px 7px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -78,6 +80,25 @@ html, body {
     left: 0; 
 }
 
+.menu-orange-header { 
+    background: #ff6a00; 
+    color: white; 
+    padding: 20px; 
+    text-align: center; 
+    position: relative;
+}
+
+.menu-orange-header .close-btn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 28px; /* أكبر */
+    cursor: pointer;
+    color: white; /* لون مناسب */
+}
+
+/* --- الجسم الداخلي للسلة --- */
 .cart-items-body { 
     flex-grow: 1; 
     overflow-y: auto; 
@@ -125,7 +146,8 @@ html, body {
 .clean-menu-list li a i { 
     margin-left: 15px; 
     color: #ff6a00; 
-    width: 20px; 
+    width: 25px;
+    font-size: 18px; /* أكبر */
 }
 
 /* --- تذييل الصفحة --- */
@@ -207,13 +229,13 @@ html, body {
     margin-top: 8px;
 }
 .qty-control button {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: none;
     background-color: #ff6a00;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -254,9 +276,13 @@ html, body {
     }
 }
 
-/* --- أيقونة الموقع عند العنوان --- */
+/* --- أيقونة الموقع بجانب العنوان --- */
+.address-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .address-card .card-icon-box i {
-    color: #ff6a00; /* برتقالي */
+    color: #ff6a00;
     font-size: 28px;
-    margin-left: 10px; /* مسافة عن العنوان */
 }
