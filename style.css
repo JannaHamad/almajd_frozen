@@ -7,6 +7,7 @@ html, body {
     scroll-behavior: smooth; 
 }
 
+/* الهيدر العلوي */
 .top-bar { 
     position: fixed; 
     top: 0; 
@@ -29,10 +30,11 @@ html, body {
     padding: 2px; 
 }
 
+/* الثلاث شحطات جنب بعض */
 .cart-menu-group {
     display: flex;
     align-items: center;
-    gap: 15px; /* مسافة بينهم */
+    gap: 15px;
 }
 
 .menu-btn {
@@ -150,7 +152,7 @@ html, body {
     font-size: 35px; 
 }
 
-/* بطاقة المنتج */
+/* بطاقة المنتجات */
 .items-grid { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
@@ -169,6 +171,8 @@ html, body {
     height: 110px; 
     object-fit: contain; 
 }
+
+/* التابس */
 .tabs { 
     display: flex; 
     justify-content: center; 
@@ -190,28 +194,44 @@ html, body {
     color: white; 
 }
 
-/* أزرار + و - داخل دوائر */
-.qty-control button {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    background: #ff6a00;
-    color: white;
+/* أزرار + و - داخل دوائر والرقم بينهم */
+.qty-control {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 5px;
-    transition: 0.3s;
-}
-.qty-control button:hover {
-    background: #e65c00;
+    gap: 8px;
+    margin-top: 8px;
 }
 
-/* لون السعر */
+.qty-control button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff6a00;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.qty-control button:hover {
+    background-color: #e65c00;
+}
+
+.qty-control span {
+    min-width: 24px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+/* السعر */
 .price {
     color: #ff6a00;
     font-weight: bold;
