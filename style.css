@@ -1,28 +1,24 @@
 html, body { margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; background: #f7f7f7; direction: rtl; scroll-behavior: smooth; }
 
-/* الهيدر */
 .top-bar { position: fixed; top: 0; width: 100%; height: 65px; background: white; display: flex; justify-content: space-between; align-items: center; padding: 0 15px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box; }
-.logo-container { height: 100%; display: flex; align-items: center; }
 .main-logo-oval { height: 45px; width: auto; border-radius: 50% / 50%; border: 1px solid #ff6a00; padding: 2px; }
 
-/* السلة والمنيو بجانب بعض */
 .cart-menu-group { display: flex; align-items: center; gap: 20px; }
 .cart-icon { position: relative; font-size: 22px; cursor: pointer; color: #333; }
 #cartCount { position: absolute; top: -8px; right: -10px; background: #ff6a00; color: white; font-size: 11px; width: 18px; height: 18px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
-.menu-btn { font-size: 26px; cursor: pointer; color: #333; }
+.menu-btn { font-size: 28px; cursor: pointer; color: #333; }
 
-/* الأدراج الجانبية */
-.cart-drawer, .side-menu-drawer { position: fixed; top: 0; left: -100%; width: 300px; height: 100%; background: white; z-index: 2000; transition: 0.4s ease; }
+.cart-drawer, .side-menu-drawer { position: fixed; top: 0; left: -100%; width: 300px; height: 100%; background: white; z-index: 2000; transition: 0.4s ease; box-shadow: 5px 0 15px rgba(0,0,0,0.1); }
 .cart-drawer.open, .side-menu-drawer.open { left: 0; }
 .menu-orange-header { background: #ff6a00; color: white; padding: 25px 20px; position: relative; }
 .close-btn { position: absolute; top: 12px; left: 12px; font-size: 28px; cursor: pointer; color: white; }
 
-/* المنتجات */
 .hero { width: 100%; height: 35vh; background: url('cover.jpg') center/cover no-repeat; margin-top: 65px; border-radius: 0 0 20px 20px; }
 .tabs { display: flex; justify-content: center; gap: 5px; margin: 20px 0; overflow-x: auto; padding: 10px; }
-.tab { padding: 8px 18px; border: none; background: #eee; border-radius: 20px; cursor: pointer; font-family: inherit; font-weight: bold; white-space: nowrap; }
+.tab { padding: 8px 18px; border: none; background: #eee; border-radius: 20px; cursor: pointer; font-weight: bold; white-space: nowrap; font-family: inherit; }
 .tab.active { background: #ff6a00; color: white; }
-.category { display: none; margin-bottom: 20px; }
+
+.category { display: none; }
 .items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
 .product-card { background: white; border-radius: 12px; padding: 10px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
 .img-container { width: 100%; height: 110px; display: flex; justify-content: center; align-items: center; overflow: hidden; }
@@ -31,7 +27,7 @@ html, body { margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; backgrou
 .qty-control { display: flex; justify-content: center; align-items: center; gap: 10px; }
 .qty-control button { width: 30px; height: 30px; border-radius: 50%; border: 1px solid #ddd; background: #fff; cursor: pointer; }
 
-/* بوكس العنوان الأبيض المعدل */
+/* بوكس العنوان الأبيض */
 .location-card-container { padding: 20px; display: flex; justify-content: center; }
 .address-card { background: white; border-radius: 15px; padding: 20px; display: flex; align-items: center; width: 100%; max-width: 450px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid #eee; }
 .card-icon-box { font-size: 38px; color: #ff6a00; margin-left: 20px; }
@@ -44,8 +40,8 @@ html, body { margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; backgrou
 .address-box { background: white; color: #333; padding: 40px 20px; text-align: center; border-top: 2px solid #ff6a00; margin-top: 30px; }
 .footer-brand img { height: 70px; margin-bottom: 10px; border-radius: 50%; border: 1px solid #ff6a00; }
 .social-icons { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
-.fa-whatsapp { color: #25D366; font-size: 35px; } /* أخضر */
-.fa-facebook { color: #1877F2; font-size: 35px; } /* أزرق */
+.fa-whatsapp { color: #25D366; font-size: 35px; }
+.fa-facebook { color: #1877F2; font-size: 35px; }
 
 .whatsapp-send { background: #25D366; color: white; border: none; padding: 15px; width: 100%; border-radius: 12px; font-size: 18px; font-weight: bold; cursor: pointer; }
 .whatsapp-send:disabled { background: #ccc; }
