@@ -1,33 +1,215 @@
-html, body { margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; background: #f7f7f7; direction: rtl; scroll-behavior: smooth; }
+* {
+    box-sizing: border-box;
+}
 
-/* الهيدر واللوجو المصغر والبيضاوي */
-.top-bar { position: fixed; top: 0; width: 100%; height: 65px; background: white; display: flex; justify-content: space-between; align-items: center; padding: 0 15px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box; }
-.logo-container { height: 100%; display: flex; align-items: center; }
-.main-logo-oval { height: 45px; width: auto; max-width: 90px; object-fit: contain; border-radius: 50% / 50%; border: 1px solid #ff6a00; padding: 2px; }
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+    background: #f7f7f7;
+    direction: rtl;
+}
 
-/* القوائم الجانبية من اليسار */
-.cart-drawer, .side-menu-drawer { position: fixed; top: 0; left: -100%; width: 300px; height: 100%; background: white; z-index: 2000; transition: 0.4s ease; box-shadow: 5px 0 15px rgba(0,0,0,0.1); }
-.cart-drawer.open, .side-menu-drawer.open { left: 0; }
-.menu-orange-header { background: #ff6a00; color: white; padding: 25px 20px; position: relative; }
-.close-btn { position: absolute; top: 12px; left: 12px; font-size: 28px; cursor: pointer; color: white; }
+/* ===== HEADER ===== */
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 14px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
 
-/* ترتيب المنيو تحت بعضه */
-.menu-list-container { padding: 20px; }
-.list-label { color: #999; font-size: 14px; margin-bottom: 15px; font-weight: bold; }
-.clean-menu-list { list-style: none; padding: 0; margin: 0; }
-.clean-menu-list li { border-bottom: 1px solid #f2f2f2; }
-.clean-menu-list li a { display: flex; align-items: center; padding: 18px 5px; text-decoration: none; color: #333; font-size: 18px; font-weight: bold; }
-.clean-menu-list li a i { margin-left: 15px; color: #ff6a00; width: 25px; text-align: center; }
+.main-logo-oval {
+    height: 45px;
+    border-radius: 999px;
+    border: 1px solid #ff6a00;
+    padding: 3px;
+}
 
-/* شبكة المنتجات وتنسيق الصور */
-.items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
-.product-card { background: white; border-radius: 12px; padding: 10px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
-.img-container { width: 100%; height: 110px; display: flex; justify-content: center; align-items: center; overflow: hidden; }
-.img-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.cart-menu-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-/* زر الواتساب */
-.whatsapp-send { background: #25D366; color: white; border: none; padding: 15px; width: 90%; margin: 10px auto; border-radius: 12px; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
-.whatsapp-send:disabled { background: #ccc; }
+.menu-btn {
+    font-size: 30px;
+    cursor: pointer;
+}
 
-.hero { width: 100%; height: 40vh; background: url('cover.jpg') center/cover no-repeat; margin-top: 65px; border-radius: 0 0 20px 20px; }
-.address-box { background: #ff6a00; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
+.cart-icon {
+    background: #ff6a00;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cart-icon span {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: red;
+    color: white;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== HERO ===== */
+.hero {
+    margin-top: 65px;
+    height: 40vh;
+    background: url('cover.jpg') center / cover no-repeat;
+    border-radius: 0 0 20px 20px;
+}
+
+/* ===== TABS ===== */
+.tabs {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.tab {
+    border: none;
+    background: #eee;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #ff6a00;
+    color: white;
+}
+
+/* ===== PRODUCTS ===== */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 10px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 14px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+.img-container {
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.price {
+    color: #ff6a00;
+    font-weight: bold;
+}
+
+.qty-control {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.qty-control button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: #ff6a00;
+    color: white;
+    font-size: 18px;
+}
+
+/* ===== DRAWERS ===== */
+.cart-drawer,
+.side-menu-drawer {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    background: white;
+    transition: .4s;
+    z-index: 2000;
+}
+
+.cart-drawer.open,
+.side-menu-drawer.open {
+    left: 0;
+}
+
+.menu-orange-header {
+    background: #ff6a00;
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ===== LOCATION ===== */
+.location-card-container {
+    padding: 20px;
+}
+
+.address-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,.07);
+}
+
+.location-icon {
+    font-size: 34px;
+    color: #ff6a00;
+}
+
+/* ===== FOOTER ===== */
+.address-box {
+    background: #ff6a00;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.social-icons a {
+    font-size: 30px;
+    margin: 0 10px;
+}
