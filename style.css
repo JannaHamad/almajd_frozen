@@ -41,14 +41,14 @@ html, body {
 .menu-btn {
     font-size: 32px;
     cursor: pointer;
-    color: #ff6a00; /* لون متناسق */
+    color: #000; /* أسود */
 }
 
 .cart-icon {
     position: relative;
     cursor: pointer;
     font-size: 32px;
-    color: #ff6a00; /* نفس اللون */
+    color: #000; /* أسود */
 }
 
 #cartCount {
@@ -276,7 +276,7 @@ html, body {
     }
 }
 
-/* --- أيقونة الموقع بالأسود والعنوان بجوا مربع --- */
+/* --- أيقونة الموقع برتقالي والعنوان داخل مربع أسود غامق --- */
 .address-card {
     display: flex;
     align-items: center;
@@ -287,12 +287,12 @@ html, body {
 }
 
 .address-card .card-icon-box i {
-    color: #000; /* أيقونة الموقع بالأسود */
+    color: #ff6a00; /* أيقونة الموقع بالبرتقالي */
     font-size: 28px;
 }
 
 .address-card .card-content h4 {
     margin: 0;
     font-weight: bold;
-    color: #ff6a00;
+    color: #000; /* كلمة العنوان سوداء غامقة */
 }
