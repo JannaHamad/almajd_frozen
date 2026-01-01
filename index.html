@@ -44,19 +44,28 @@
 
 <!-- الهيدر -->
 <header class="top-bar">
-  <div class="logo-container">
-    <img src="logo.png" class="logo-oval">
-  </div>
-
-  <div class="cart-menu-group">
-    <div class="cart-icon" onclick="toggleCart()">
-      <i class="fas fa-shopping-cart"></i>
-      <span id="cartCount">0</span>
+    <div class="logo-container">
+        <img src="logo.png" alt="مجمدات المجد" class="main-logo-oval">
     </div>
-
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  </div>
+    <div class="cart-menu-group">
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cartCount">0</span>
+        </div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </div>
 </header>
+
+<div class="location-card-container" id="location">
+    <div class="address-card">
+        <div class="card-icon-box"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="card-content">
+            <h4 class="card-title">العنوان</h4>
+            <p class="card-text">جماعين – الشارع الرئيسي – مقابل كازية الجماعيني للمحروقات – بجانب سوبر ماركت الرنتيسي</p>
+            <a href="https://maps.apple.com/?ll=32.137551,35.220417&q=Location&t=h" target="_blank" class="maps-link">افتح في خرائط جوجل ←</a>
+        </div>
+    </div>
+</div>
 
 <!-- الكوفر -->
 <section class="hero" id="top"></section>
@@ -173,3 +182,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
