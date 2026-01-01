@@ -1,7 +1,7 @@
 let cart = {};
 
 document.addEventListener("DOMContentLoaded", () => {
-    // عرض الكل عند فتح الصفحة
+    // عرض الكل فور فتح الصفحة
     showCategory("all", document.querySelector(".tab"));
     updateCart();
 });
