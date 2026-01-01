@@ -7,7 +7,6 @@ html, body {
     scroll-behavior: smooth; 
 }
 
-/* الهيدر العلوي */
 .top-bar { 
     position: fixed; 
     top: 0; 
@@ -30,7 +29,6 @@ html, body {
     padding: 2px; 
 }
 
-/* الثلاث شحطات جنب بعض */
 .cart-menu-group {
     display: flex;
     align-items: center;
@@ -60,7 +58,6 @@ html, body {
     font-weight: bold;
 }
 
-/* سلة الطلبات والقائمة الجانبية */
 .cart-drawer, .side-menu-drawer { 
     position: fixed; 
     top: 0; 
@@ -172,7 +169,6 @@ html, body {
     object-fit: contain; 
 }
 
-/* التابس */
 .tabs { 
     display: flex; 
     justify-content: center; 
@@ -194,7 +190,7 @@ html, body {
     color: white; 
 }
 
-/* أزرار + و - داخل دوائر والرقم بينهم */
+/* أزرار + و - داخل دوائر */
 .qty-control {
     display: flex;
     align-items: center;
@@ -202,7 +198,6 @@ html, body {
     gap: 8px;
     margin-top: 8px;
 }
-
 .qty-control button {
     width: 32px;
     height: 32px;
@@ -218,11 +213,9 @@ html, body {
     justify-content: center;
     transition: 0.2s;
 }
-
 .qty-control button:hover {
     background-color: #e65c00;
 }
-
 .qty-control span {
     min-width: 24px;
     text-align: center;
@@ -231,7 +224,6 @@ html, body {
     color: #333;
 }
 
-/* السعر */
 .price {
     color: #ff6a00;
     font-weight: bold;
