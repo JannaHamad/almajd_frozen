@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مجمدات المجد</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مجمدات المجد</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -19,13 +19,13 @@
   </div>
 
   <div class="menu-drawer-links">
-    <a href="#top" onclick="toggleMenu()"><span>الرئيسية</span><i class="fas fa-home"></i></a>
-    <a href="#menu" onclick="toggleMenu()"><span>قائمة الأصناف</span><i class="fas fa-utensils"></i></a>
-    <a href="#location" onclick="toggleMenu()"><span>موقعنا</span><i class="fas fa-map-marker-alt"></i></a>
+    <a href="#top" onclick="toggleMenu()"><i class="fas fa-home"></i> الرئيسية</a>
+    <a href="#menu" onclick="toggleMenu()"><i class="fas fa-utensils"></i> قائمة الأصناف</a>
+    <a href="#location" onclick="toggleMenu()"><i class="fas fa-map-marker-alt"></i> موقعنا</a>
   </div>
 </div>
 
-<!-- سلة الطلبات -->
+<!-- السلة -->
 <div class="cart-drawer" id="cartDrawer">
   <div class="menu-orange-header">
     <span class="close-btn" onclick="toggleCart()">×</span>
@@ -36,7 +36,7 @@
 
   <div class="cart-footer">
     <p class="total">المجموع: <span id="cartTotal">0</span> ₪</p>
-    <button class="whatsapp-send" id="sendBtn" onclick="sendWhatsApp()" disabled>
+    <button id="sendBtn" class="whatsapp-send" onclick="sendWhatsApp()" disabled>
       السلة فارغة
     </button>
   </div>
@@ -44,8 +44,8 @@
 
 <!-- الهيدر -->
 <header class="top-bar">
-  <div class="logo">
-    <img src="logo.png" alt="مجمدات المجد">
+  <div class="logo-container">
+    <img src="logo.png" class="logo-oval">
   </div>
 
   <div class="cart-menu-group">
@@ -53,6 +53,7 @@
       <i class="fas fa-shopping-cart"></i>
       <span id="cartCount">0</span>
     </div>
+
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
   </div>
 </header>
@@ -60,8 +61,8 @@
 <!-- الكوفر -->
 <section class="hero" id="top"></section>
 
-<!-- المنيو -->
-<section id="menu" class="menu">
+<!-- الأصناف -->
+<section class="menu" id="menu">
   <h2 class="section-title">قائمة الأصناف</h2>
 
   <div class="tabs">
@@ -72,129 +73,77 @@
     <button class="tab" onclick="showCategory('sandwich',this)">🥪 سندويشات</button>
   </div>
 
-  <!-- الكل -->
-  <div class="category" id="all">
-    <div class="product-card">
-      <img src="chicken.jpg">
-      <h4>دجاج</h4>
-      <p>10 ₪</p>
-      <div class="qty">
-        <button onclick="changeQty('دجاج',10,-1)">−</button>
-        <span id="دجاج">0</span>
-        <button onclick="changeQty('دجاج',10,1)">+</button>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="wings.jpg">
-      <h4>أجنحة</h4>
-      <p>10 ₪</p>
-      <div class="qty">
-        <button onclick="changeQty('أجنحة',10,-1)">−</button>
-        <span id="أجنحة">0</span>
-        <button onclick="changeQty('أجنحة',10,1)">+</button>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="peas.jpg">
-      <h4>بازيلا</h4>
-      <p>10 ₪</p>
-      <div class="qty">
-        <button onclick="changeQty('بازيلا',10,-1)">−</button>
-        <span id="بازيلا">0</span>
-        <button onclick="changeQty('بازيلا',10,1)">+</button>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="burger.jpg">
-      <h4>برغر</h4>
-      <p>10 ₪</p>
-      <div class="qty">
-        <button onclick="changeQty('برغر',10,-1)">−</button>
-        <span id="برغر">0</span>
-        <button onclick="changeQty('برغر',10,1)">+</button>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="arayes.jpg">
-      <h4>عرايس</h4>
-      <p>10 ₪</p>
-      <div class="qty">
-        <button onclick="changeQty('عرايس',10,-1)">−</button>
-        <span id="عرايس">0</span>
-        <button onclick="changeQty('عرايس',10,1)">+</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- لحوم -->
+  <!-- اللحوم -->
   <div class="category" id="meat">
-    <div class="product-card">
-      <img src="chicken.jpg">
-      <h4>دجاج</h4>
-      <p>10 ₪</p>
-      <div class="qty">
-        <button onclick="changeQty('دجاج',10,-1)">−</button>
-        <span id="دجاج">0</span>
-        <button onclick="changeQty('دجاج',10,1)">+</button>
+    <div class="items-grid">
+      <div class="product-card">
+        <img src="chicken.jpg">
+        <h4>دجاج</h4>
+        <p>10 ₪</p>
+        <div class="qty-control">
+          <button onclick="changeQty('دجاج',10,1)">+</button>
+          <span id="دجاج">0</span>
+          <button onclick="changeQty('دجاج',10,-1)">-</button>
+        </div>
       </div>
-    </div>
 
-    <div class="product-card">
-      <img src="wings.jpg">
-      <h4>أجنحة</h4>
-      <p>10 ₪</p>
-      <div class="qty">
-        <button onclick="changeQty('أجنحة',10,-1)">−</button>
-        <span id="أجنحة">0</span>
-        <button onclick="changeQty('أجنحة',10,1)">+</button>
+      <div class="product-card">
+        <img src="wings.jpg">
+        <h4>أجنحة</h4>
+        <p>10 ₪</p>
+        <div class="qty-control">
+          <button onclick="changeQty('أجنحة',10,1)">+</button>
+          <span id="أجنحة">0</span>
+          <button onclick="changeQty('أجنحة',10,-1)">-</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- خضار -->
+  <!-- الخضار -->
   <div class="category" id="veg">
-    <div class="product-card">
-      <img src="peas.jpg">
-      <h4>بازيلا</h4>
-      <p>10 ₪</p>
-      <div class="qty">
-        <button onclick="changeQty('بازيلا',10,-1)">−</button>
-        <span id="بازيلا">0</span>
-        <button onclick="changeQty('بازيلا',10,1)">+</button>
+    <div class="items-grid">
+      <div class="product-card">
+        <img src="peas.jpg">
+        <h4>بازيلا</h4>
+        <p>10 ₪</p>
+        <div class="qty-control">
+          <button onclick="changeQty('بازيلا',10,1)">+</button>
+          <span id="بازيلا">0</span>
+          <button onclick="changeQty('بازيلا',10,-1)">-</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- وجبات (فاضي) -->
+  <!-- الوجبات (فاضي) -->
   <div class="category" id="meals">
-    <p class="empty">سيتم إضافة الوجبات قريبًا</p>
+    <p class="empty-note">سيتم إضافة الوجبات قريبًا</p>
   </div>
 
-  <!-- سندويشات -->
+  <!-- السندويشات -->
   <div class="category" id="sandwich">
-    <div class="product-card">
-      <img src="burger.jpg">
-      <h4>برغر</h4>
-      <p>10 ₪</p>
-      <div class="qty">
-        <button onclick="changeQty('برغر',10,-1)">−</button>
-        <span id="برغر">0</span>
-        <button onclick="changeQty('برغر',10,1)">+</button>
+    <div class="items-grid">
+      <div class="product-card">
+        <img src="arayes.jpg">
+        <h4>عرايس</h4>
+        <p>10 ₪</p>
+        <div class="qty-control">
+          <button onclick="changeQty('عرايس',10,1)">+</button>
+          <span id="عرايس">0</span>
+          <button onclick="changeQty('عرايس',10,-1)">-</button>
+        </div>
       </div>
-    </div>
 
-    <div class="product-card">
-      <img src="arayes.jpg">
-      <h4>عرايس</h4>
-      <p>10 ₪</p>
-      <div class="qty">
-        <button onclick="changeQty('عرايس',10,-1)">−</button>
-        <span id="عرايس">0</span>
-        <button onclick="changeQty('عرايس',10,1)">+</button>
+      <div class="product-card">
+        <img src="burger.jpg">
+        <h4>برغر</h4>
+        <p>10 ₪</p>
+        <div class="qty-control">
+          <button onclick="changeQty('برغر',10,1)">+</button>
+          <span id="برغر">0</span>
+          <button onclick="changeQty('برغر',10,-1)">-</button>
+        </div>
       </div>
     </div>
   </div>
@@ -202,24 +151,22 @@
 
 <!-- العنوان -->
 <div class="address-card" id="location">
-  <div class="card-content">
+  <i class="fas fa-map-marker-alt"></i>
+  <div>
     <h4>العنوان</h4>
     <p>جماعين – الشارع الرئيسي – مقابل كازية الجماعيني</p>
   </div>
-  <div class="card-icon-box">
-    <i class="fas fa-map-marker-alt"></i>
-  </div>
 </div>
 
-<!-- الفوتر -->
 <footer class="address-box">
-  <img src="logo.png">
+  <img src="logo.png" class="logo-oval">
   <h3>مجمدات المجد</h3>
-  <p>نقدم لكم أفضل أنواع المجمدات</p>
+  <p>نقدم لكم أفضل أنواع المجمدات والأطعمة</p>
 
   <div class="social-icons">
+    <span>تابعنا</span>
     <a href="https://wa.me/970566706688"><i class="fab fa-whatsapp"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.facebook.com/share/17kVSba7L2/"><i class="fab fa-facebook"></i></a>
   </div>
 </footer>
 
