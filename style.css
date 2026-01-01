@@ -29,3 +29,20 @@ html, body { margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; backgrou
 .tabs { display: flex; justify-content: center; gap: 5px; margin: 20px 0; overflow-x: auto; padding: 10px; }
 .tab { padding: 8px 15px; border: none; background: #eee; border-radius: 20px; font-family: inherit; cursor: pointer; }
 .tab.active { background: #ff6a00; color: white; }
+/* تنسيق صورة الكوفر لتظهر كاملة وتناسب الجوال */
+.hero { 
+    width: 100%; 
+    /* الارتفاع يتغير تلقائياً حسب عرض الشاشة ليحافظ على أبعاد الصورة كاملة */
+    aspect-ratio: 16 / 9; 
+    background: url('cover.jpg') center top / contain no-repeat; 
+    margin-top: 65px; /* المسافة تحت الهيدر الثابت */
+    background-color: #f7f7f7; /* لون خلفية احتياطي */
+}
+
+/* تعديل خاص للشاشات الصغيرة (التلفون) */
+@media (max-width: 768px) {
+    .hero {
+        aspect-ratio: 4 / 3; /* تغيير أبعاد الصورة لتناسب شاشة التلفون بشكل أفضل */
+        background-size: cover; /* جعل الصورة تغطي المساحة في الجوال لتملأ الشاشة */
+    }
+}
