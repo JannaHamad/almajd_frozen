@@ -10,34 +10,6 @@
 </head>
 <body>
 
-<div class="side-menu-drawer" id="sideMenu">
-    <div class="menu-orange-header">
-        <span class="close-btn" onclick="toggleMenu()">×</span>
-        <h3>مجمدات المجد</h3>
-        <p>نقدم لكم الأفضل</p>
-    </div>
-    <div class="menu-list-container">
-        <p class="list-label">القائمة الرئيسية</p>
-        <ul class="clean-menu-list">
-            <li><a href="#top" onclick="toggleMenu()"><i class="fas fa-home"></i> الرئيسية</a></li>
-            <li><a href="#menu" onclick="toggleMenu()"><i class="fas fa-utensils"></i> قائمة الأصناف</a></li>
-            <li><a href="#location" onclick="toggleMenu()"><i class="fas fa-map-marker-alt"></i> موقعنا</a></li>
-        </ul>
-    </div>
-</div>
-
-<div class="cart-drawer" id="cartDrawer">
-    <div class="menu-orange-header">
-        <span class="close-btn" onclick="toggleCart()">×</span>
-        <h3>🛒 سلة الطلبات</h3>
-    </div>
-    <div id="cartItems" style="flex-grow: 1; overflow-y: auto;"></div>
-    <div class="cart-footer">
-        <p class="total">المجموع: <span id="cartTotal">0</span> ₪</p>
-        <button class="whatsapp-send" id="sendBtn" onclick="sendWhatsApp()" disabled>السلة فارغة</button>
-    </div>
-</div>
-
 <header class="top-bar">
     <div class="logo-container">
         <img src="logo.png" alt="مجمدات المجد" class="main-logo-oval">
@@ -51,10 +23,32 @@
     </div>
 </header>
 
+<div class="side-menu-drawer" id="sideMenu">
+    <div class="menu-orange-header">
+        <span class="close-btn" onclick="toggleMenu()">×</span>
+        <h3>مجمدات المجد</h3>
+    </div>
+    <ul class="clean-menu-list">
+        <li><a href="#top" onclick="toggleMenu()"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="#location" onclick="toggleMenu()"><i class="fas fa-map-marker-alt"></i> موقعنا</a></li>
+    </ul>
+</div>
+
+<div class="cart-drawer" id="cartDrawer">
+    <div class="menu-orange-header">
+        <span class="close-btn" onclick="toggleCart()">×</span>
+        <h3>🛒 سلة الطلبات</h3>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+        <p class="total">المجموع: <span id="cartTotal">0</span> ₪</p>
+        <button class="whatsapp-send" id="sendBtn" onclick="sendWhatsApp()" disabled>السلة فارغة</button>
+    </div>
+</div>
+
 <section class="hero" id="top"></section>
 
 <section id="menu" class="menu">
-    <h2 class="section-title">قائمة الأصناف</h2>
     <div class="tabs">
         <button class="tab active" onclick="showCategory('all', this)">🛒 الكل</button>
         <button class="tab" onclick="showCategory('meat', this)">🥩 لحوم</button>
@@ -66,7 +60,7 @@
     <div class="category" id="meat">
         <div class="items-grid">
             <div class="product-card">
-                <div class="img-container"><img src="chicken.jpg" alt="دجاج"></div>
+                <div class="img-container"><img src="chicken.jpg"></div>
                 <h4>دجاج طازج</h4>
                 <p class="price">25 ₪</p>
                 <div class="qty-control">
@@ -75,29 +69,19 @@
                     <button onclick="changeQty('دجاج طازج', 25, -1)">-</button>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="img-container"><img src="wings.jpg" alt="أجنحة"></div>
-                <h4>أجنحة دجاج</h4>
-                <p class="price">15 ₪</p>
-                <div class="qty-control">
-                    <button onclick="changeQty('أجنحة دجاج', 15, 1)">+</button>
-                    <span id="أجنحة دجاج">0</span>
-                    <button onclick="changeQty('أجنحة دجاج', 15, -1)">-</button>
-                </div>
-            </div>
         </div>
     </div>
 
     <div class="category" id="veg">
         <div class="items-grid">
             <div class="product-card">
-                <div class="img-container"><img src="peas.jpg" alt="بازيلاء"></div>
-                <h4>بازيلاء خضراء</h4>
+                <div class="img-container"><img src="peas.jpg"></div>
+                <h4>بازيلاء</h4>
                 <p class="price">10 ₪</p>
                 <div class="qty-control">
-                    <button onclick="changeQty('بازيلاء خضراء', 10, 1)">+</button>
-                    <span id="بازيلاء خضراء">0</span>
-                    <button onclick="changeQty('بازيلاء خضراء', 10, -1)">-</button>
+                    <button onclick="changeQty('بازيلاء', 10, 1)">+</button>
+                    <span id="بازيلاء">0</span>
+                    <button onclick="changeQty('بازيلاء', 10, -1)">-</button>
                 </div>
             </div>
         </div>
@@ -106,23 +90,13 @@
     <div class="category" id="meals">
         <div class="items-grid">
             <div class="product-card">
-                <div class="img-container"><img src="meal1.jpg" alt="وجبة عائلية"></div>
-                <h4>وجبة عائلية مشكلة</h4>
+                <div class="img-container"><img src="meal.jpg"></div>
+                <h4>وجبة عائلية</h4>
                 <p class="price">60 ₪</p>
                 <div class="qty-control">
-                    <button onclick="changeQty('وجبة عائلية مشكلة', 60, 1)">+</button>
-                    <span id="وجبة عائلية مشكلة">0</span>
-                    <button onclick="changeQty('وجبة عائلية مشكلة', 60, -1)">-</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="img-container"><img src="meal2.jpg" alt="وجبة دبل"></div>
-                <h4>وجبة دبل كريسبي</h4>
-                <p class="price">35 ₪</p>
-                <div class="qty-control">
-                    <button onclick="changeQty('وجبة دبل كريسبي', 35, 1)">+</button>
-                    <span id="وجبة دبل كريسبي">0</span>
-                    <button onclick="changeQty('وجبة دبل كريسبي', 35, -1)">-</button>
+                    <button onclick="changeQty('وجبة عائلية', 60, 1)">+</button>
+                    <span id="وجبة عائلية">0</span>
+                    <button onclick="changeQty('وجبة عائلية', 60, -1)">-</button>
                 </div>
             </div>
         </div>
@@ -131,17 +105,7 @@
     <div class="category" id="sandwich">
         <div class="items-grid">
             <div class="product-card">
-                <div class="img-container"><img src="arayes.jpg" alt="عرايس"></div>
-                <h4>عرايس</h4>
-                <p class="price">15 ₪</p>
-                <div class="qty-control">
-                    <button onclick="changeQty('عرايس', 15, 1)">+</button>
-                    <span id="عرايس">0</span>
-                    <button onclick="changeQty('عرايس', 15, -1)">-</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="img-container"><img src="burger.jpg" alt="برغر"></div>
+                <div class="img-container"><img src="burger.jpg"></div>
                 <h4>برغر بقري</h4>
                 <p class="price">20 ₪</p>
                 <div class="qty-control">
@@ -153,25 +117,25 @@
         </div>
     </div>
 </section>
+
 <div class="location-card-container" id="location">
     <div class="address-card">
         <div class="card-icon-box"><i class="fas fa-map-marker-alt"></i></div>
         <div class="card-content">
             <h4 class="card-title">العنوان</h4>
-            <p class="card-text">جماعين – الشارع الرئيسي – مقابل كازية الجماعيني للمحروقات – بجانب سوبر ماركت الرنتيسي</p>
-            <a href="https://maps.apple.com/?ll=32.137551,35.220417&q=Location&t=h" target="_blank" class="maps-link">افتح في خرائط جوجل ←</a>
+            <p class="card-text">جماعين – الشارع الرئيسي – مقابل كازية الجماعيني</p>
+            <a href="https://maps.apple.com/?ll=32.137551,35.220417" target="_blank" class="maps-link">افتح في الخريطة ←</a>
         </div>
     </div>
 </div>
 
 <footer class="address-box">
     <div class="footer-brand">
-        <img src="logo.png" class="main-logo-oval" style="filter: brightness(0) invert(1);">
+        <img src="logo.png" alt="اللوجو">
         <h3>مجمدات المجد</h3>
-        <p>نقدم لكم أفضل أنواع المجمدات</p>
+        <p>نقدم لكم الأفضل دائماً</p>
     </div>
     <div class="social-icons">
-        <p style="width:100%; margin-bottom:10px;">تابعنا</p>
         <a href="https://wa.me/970566706688" target="_blank"><i class="fab fa-whatsapp"></i></a>
         <a href="https://www.facebook.com/share/17kVSba7L2/" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
@@ -180,4 +144,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
