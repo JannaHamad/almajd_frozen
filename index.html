@@ -69,30 +69,407 @@
     </div>
 
     <!-- مثال على قسم اللحوم -->
-    <div class="category" id="meat">
-        <div class="items-grid">
-            <div class="product-card">
-                <div class="img-container"><img src="دجاج.jpg" alt="دجاج"></div>
-                <h4>دجاج طازج</h4>
-                <p class="price">25 ₪</p>
-                <div class="qty-control">
-                    <button onclick="changeQty('دجاج طازج', 25, 1)">+</button>
-                    <span id="دجاج طازج">0</span>
-                    <button onclick="changeQty('دجاج طازج', 25, -1)">-</button>
-                </div>
+<div class="category" id="meat">
+    <div class="items-grid">
+
+        <!-- اللحوم والدواجن والأسماك والكريسبي/سنيتشل -->
+        <div class="product-card">
+            <div class="img-container"><img src="دبابيس_كريم_حار.jpeg" alt="دبابيس كريم حار"></div>
+            <h4>دبابيس كريم حار</h4>
+            <p class="price">25 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('دبابيس كريم حار', 25, 1)">+</button>
+                <span id="دبابيس كريم حار">0</span>
+                <button onclick="changeQty('دبابيس كريم حار', 25, -1)">-</button>
             </div>
-            <div class="product-card">
-                <div class="img-container"><img src="wings.jpg" alt="أجنحة"></div>
-                <h4>أجنحة دجاج</h4>
-                <p class="price">15 ₪</p>
-                <div class="qty-control">
-                    <button onclick="changeQty('أجنحة دجاج', 15, 1)">+</button>
-                    <span id="أجنحة دجاج">0</span>
-                    <button onclick="changeQty('أجنحة دجاج', 15, -1)">-</button>
-                </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="دبابيس_كريم_كلاسيك.jpeg" alt="دبابيس كريم كلاسيك"></div>
+            <h4>دبابيس كريم كلاسيك</h4>
+            <p class="price">25 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('دبابيس كريم كلاسيك', 25, 1)">+</button>
+                <span id="دبابيس كريم كلاسيك">0</span>
+                <button onclick="changeQty('دبابيس كريم كلاسيك', 25, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="دجاج_مجمد.jpeg" alt="دجاج مجمد"></div>
+            <h4>دجاج مجمد</h4>
+            <p class="price">50 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('دجاج مجمد', 50, 1)">+</button>
+                <span id="دجاج مجمد">0</span>
+                <button onclick="changeQty('دجاج مجمد', 50, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سمك_أرجنتيني(مقطع_روسه.jpeg" alt="سمك أرجنتيني"></div>
+            <h4>سمك أرجنتيني (مقطع روسه)</h4>
+            <p class="price">80 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سمك أرجنتيني (مقطع روسه)', 80, 1)">+</button>
+                <span id="سمك أرجنتيني (مقطع روسه)">0</span>
+                <button onclick="changeQty('سمك أرجنتيني (مقطع روسه)', 80, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنتشل_أشكال_اسرائيلي.jpeg" alt="سنتشل أشكال إسرائيلي"></div>
+            <h4>سنتشل أشكال إسرائيلي</h4>
+            <p class="price">60 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنتشل أشكال إسرائيلي', 60, 1)">+</button>
+                <span id="سنتشل أشكال إسرائيلي">0</span>
+                <button onclick="changeQty('سنتشل أشكال إسرائيلي', 60, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنتشل_أشكال_العربي.jpeg" alt="سنتشل أشكال العربي"></div>
+            <h4>سنتشل أشكال العربي</h4>
+            <p class="price">60 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنتشل أشكال العربي', 60, 1)">+</button>
+                <span id="سنتشل أشكال العربي">0</span>
+                <button onclick="changeQty('سنتشل أشكال العربي', 60, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنتشل_أصابع_حبش.jpeg" alt="سنتشل أصابع حبش"></div>
+            <h4>سنتشل أصابع حبش</h4>
+            <p class="price">60 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنتشل أصابع حبش', 60, 1)">+</button>
+                <span id="سنتشل أصابع حبش">0</span>
+                <button onclick="changeQty('سنتشل أصابع حبش', 60, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنتشل_الأميرة.jpeg" alt="سنتشل الأميرة"></div>
+            <h4>سنتشل الأميرة</h4>
+            <p class="price">60 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنتشل الأميرة', 60, 1)">+</button>
+                <span id="سنتشل الأميرة">0</span>
+                <button onclick="changeQty('سنتشل الأميرة', 60, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنتشل_أمريكي.jpeg" alt="سنتشل أمريكي"></div>
+            <h4>سنتشل أمريكي</h4>
+            <p class="price">60 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنتشل أمريكي', 60, 1)">+</button>
+                <span id="سنتشل أمريكي">0</span>
+                <button onclick="changeQty('سنتشل أمريكي', 60, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنتشيل_سمك.jpeg" alt="سنتشيل سمك"></div>
+            <h4>سنتشيل سمك</h4>
+            <p class="price">70 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنتشيل سمك', 70, 1)">+</button>
+                <span id="سنتشيل سمك">0</span>
+                <button onclick="changeQty('سنتشيل سمك', 70, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنيتشل_فلسطيني.jpeg" alt="سنيتشل فلسطيني"></div>
+            <h4>سنيتشل فلسطيني</h4>
+            <p class="price">65 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنيتشل فلسطيني', 65, 1)">+</button>
+                <span id="سنيتشل فلسطيني">0</span>
+                <button onclick="changeQty('سنيتشل فلسطيني', 65, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنيتشل_كريم_دجاج_حار.jpeg" alt="سنيتشل كريم دجاج حار"></div>
+            <h4>سنيتشل كريم دجاج حار</h4>
+            <p class="price">65 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنيتشل كريم دجاج حار', 65, 1)">+</button>
+                <span id="سنيتشل كريم دجاج حار">0</span>
+                <button onclick="changeQty('سنيتشل كريم دجاج حار', 65, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنيتشل_كريم_دجاج_كلاسيك.jpeg" alt="سنيتشل كريم دجاج كلاسيك"></div>
+            <h4>سنيتشل كريم دجاج كلاسيك</h4>
+            <p class="price">65 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنيتشل كريم دجاج كلاسيك', 65, 1)">+</button>
+                <span id="سنيتشل كريم دجاج كلاسيك">0</span>
+                <button onclick="changeQty('سنيتشل كريم دجاج كلاسيك', 65, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنيورة_كبير.jpeg" alt="سنيورة كبير"></div>
+            <h4>سنيورة كبير</h4>
+            <p class="price">50 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنيورة كبير', 50, 1)">+</button>
+                <span id="سنيورة كبير">0</span>
+                <button onclick="changeQty('سنيورة كبير', 50, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="سنيورة-صغير.jpeg" alt="سنيورة صغير"></div>
+            <h4>سنيورة صغير</h4>
+            <p class="price">30 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('سنيورة صغير', 30, 1)">+</button>
+                <span id="سنيورة صغير">0</span>
+                <button onclick="changeQty('سنيورة صغير', 30, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="صدف_حبة_كبيرة_مفتوح.jpeg" alt="صدف حبة كبيرة مفتوح"></div>
+            <h4>صدف حبة كبيرة مفتوح</h4>
+            <p class="price">90 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('صدف حبة كبيرة مفتوح', 90, 1)">+</button>
+                <span id="صدف حبة كبيرة مفتوح">0</span>
+                <button onclick="changeQty('صدف حبة كبيرة مفتوح', 90, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="صدف_مسكر.jpeg" alt="صدف مسكر"></div>
+            <h4>صدف مسكر</h4>
+            <p class="price">90 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('صدف مسكر', 90, 1)">+</button>
+                <span id="صدف مسكر">0</span>
+                <button onclick="changeQty('صدف مسكر', 90, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="فري.jpeg" alt="فري"></div>
+            <h4>فري</h4>
+            <p class="price">50 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('فري', 50, 1)">+</button>
+                <span id="فري">0</span>
+                <button onclick="changeQty('فري', 50, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="فواكه_البحر.jpeg" alt="فواكه البحر"></div>
+            <h4>فواكه البحر</h4>
+            <p class="price">95 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('فواكه البحر', 95, 1)">+</button>
+                <span id="فواكه البحر">0</span>
+                <button onclick="changeQty('فواكه البحر', 95, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="فيليه_سمك_كريم.jpeg" alt="فيليه سمك كريم"></div>
+            <h4>فيليه سمك كريم</h4>
+            <p class="price">85 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('فيليه سمك كريم', 85, 1)">+</button>
+                <span id="فيليه سمك كريم">0</span>
+                <button onclick="changeQty('فيليه سمك كريم', 85, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="كريسبي_كريم_حار.jpeg" alt="كريسبي كريم حار"></div>
+            <h4>كريسبي كريم حار</h4>
+            <p class="price">70 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('كريسبي كريم حار', 70, 1)">+</button>
+                <span id="كريسبي كريم حار">0</span>
+                <button onclick="changeQty('كريسبي كريم حار', 70, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="كريسي_كريم_كلاسيك.jpeg" alt="كريسي كريم كلاسيك"></div>
+            <h4>كريسي كريم كلاسيك</h4>
+            <p class="price">70 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('كريسي كريم كلاسيك', 70, 1)">+</button>
+                <span id="كريسي كريم كلاسيك">0</span>
+                <button onclick="changeQty('كريسي كريم كلاسيك', 70, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="كلماري.jpeg" alt="كلماري"></div>
+            <h4>كلماري</h4>
+            <p class="price">75 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('كلماري', 75, 1)">+</button>
+                <span id="كلماري">0</span>
+                <button onclick="changeQty('كلماري', 75, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="لحمة_ظهر_طبيخ.jpeg" alt="لحمة ظهر طبيخ"></div>
+            <h4>لحمة ظهر طبيخ</h4>
+            <p class="price">120 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('لحمة ظهر طبيخ', 120, 1)">+</button>
+                <span id="لحمة ظهر طبيخ">0</span>
+                <button onclick="changeQty('لحمة ظهر طبيخ', 120, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="لحمة_موزات_طبيخ.jpeg" alt="لحمة موزات طبيخ"></div>
+            <h4>لحمة موزات طبيخ</h4>
+            <p class="price">130 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('لحمة موزات طبيخ', 130, 1)">+</button>
+                <span id="لحمة موزات طبيخ">0</span>
+                <button onclick="changeQty('لحمة موزات طبيخ', 130, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="مرتديلا_1KG.jpeg" alt="مرتديلا 1KG"></div>
+            <h4>مرتديلا 1KG</h4>
+            <p class="price">90 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('مرتديلا 1KG', 90, 1)">+</button>
+                <span id="مرتديلا 1KG">0</span>
+                <button onclick="changeQty('مرتديلا 1KG', 90, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="نقانق_صغير.jpeg" alt="نقانق صغير"></div>
+            <h4>نقانق صغير</h4>
+            <p class="price">60 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('نقانق صغير', 60, 1)">+</button>
+                <span id="نقانق صغير">0</span>
+                <button onclick="changeQty('نقانق صغير', 60, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="_1.7KGمرتديلا_سادة.jpeg" alt="مرتديلا سادة 1.7KG"></div>
+            <h4>مرتديلا سادة 1.7KG</h4>
+            <p class="price">120 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('مرتديلا سادة 1.7KG', 120, 1)">+</button>
+                <span id="مرتديلا سادة 1.7KG">0</span>
+                <button onclick="changeQty('مرتديلا سادة 1.7KG', 120, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="بسطرما_حبش_400g.jpeg" alt="بسطرما حبش 400g"></div>
+            <h4>بسطرما حبش 400g</h4>
+            <p class="price">75 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('بسطرما حبش 400g', 75, 1)">+</button>
+                <span id="بسطرما حبش 400g">0</span>
+                <button onclick="changeQty('بسطرما حبش 400g', 75, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="بسطرما_حبش_800g.jpeg" alt="بسطرما حبش 800g"></div>
+            <h4>بسطرما حبش 800g</h4>
+            <p class="price">140 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('بسطرما حبش 800g', 140, 1)">+</button>
+                <span id="بسطرما حبش 800g">0</span>
+                <button onclick="changeQty('بسطرما حبش 800g', 140, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="بوب_كورن_حار.jpeg" alt="بوب كورن حار"></div>
+            <h4>بوب كورن حار</h4>
+            <p class="price">25 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('بوب كورن حار', 25, 1)">+</button>
+                <span id="بوب كورن حار">0</span>
+                <button onclick="changeQty('بوب كورن حار', 25, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="بوب_كورن_كلاسيك.jpeg" alt="بوب كورن كلاسيك"></div>
+            <h4>بوب كورن كلاسيك</h4>
+            <p class="price">25 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('بوب كورن كلاسيك', 25, 1)">+</button>
+                <span id="بوب كورن كلاسيك">0</span>
+                <button onclick="changeQty('بوب كورن كلاسيك', 25, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="بيتزا_مارجريتا.jpeg" alt="بيتزا مارجريتا"></div>
+            <h4>بيتزا مارجريتا</h4>
+            <p class="price">55 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('بيتزا مارجريتا', 55, 1)">+</button>
+                <span id="بيتزا مارجريتا">0</span>
+                <button onclick="changeQty('بيتزا مارجريتا', 55, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="جمبري(16-20)حبة_كبيرة.jpeg" alt="جمبري 16-20 حبة كبيرة"></div>
+            <h4>جمبري (16-20) حبة كبيرة</h4>
+            <p class="price">120 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('جمبري (16-20) حبة كبيرة', 120, 1)">+</button>
+                <span id="جمبري (16-20) حبة كبيرة">0</span>
+                <button onclick="changeQty('جمبري (16-20) حبة كبيرة', 120, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="جمبري(26-30)حبة_وسط.jpeg" alt="جمبري 26-30 حبة وسط"></div>
+            <h4>جمبري (26-30) حبة وسط</h4>
+            <p class="price">110 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('جمبري (26-30) حبة وسط', 110, 1)">+</button>
+                <span id="جمبري (26-30) حبة وسط">0</span>
+                <button onclick="changeQty('جمبري (26-30) حبة وسط', 110, -1)">-</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="img-container"><img src="جمبري(41-50)حبة_صغيرة.jpeg" alt="جمبري 41-50 حبة صغيرة"></div>
+            <h4>جمبري (41-50) حبة صغيرة</h4>
+            <p class="price">100 ₪</p>
+            <div class="qty-control">
+                <button onclick="changeQty('جمبري (41-50) حبة صغيرة', 100, 1)">+</button>
+                <span id="جمبري (41-50) حبة صغيرة">0</span>
+                <button onclick="changeQty('جمبري (41-50) حبة صغيرة', 100, -1)">-</button>
             </div>
         </div>
     </div>
+</div>
 
     <!-- باقي الأقسام كما في الكود الأصلي -->
 </section>
@@ -128,5 +505,6 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
