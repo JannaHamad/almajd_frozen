@@ -59,6 +59,7 @@
         <button class="tab active" onclick="showCategory('all', this)">🛒 الكل</button>
         <button class="tab" onclick="showCategory('meat', this)">🥩 لحوم</button>
         <button class="tab" onclick="showCategory('veg', this)">🥦 خضار</button>
+        <button class="tab" onclick="showCategory('meals', this)">🍱 وجبات</button>
         <button class="tab" onclick="showCategory('sandwich', this)">🥪 سندويشات</button>
     </div>
 
@@ -102,6 +103,31 @@
         </div>
     </div>
 
+    <div class="category" id="meals">
+        <div class="items-grid">
+            <div class="product-card">
+                <div class="img-container"><img src="meal1.jpg" alt="وجبة عائلية"></div>
+                <h4>وجبة عائلية مشكلة</h4>
+                <p class="price">60 ₪</p>
+                <div class="qty-control">
+                    <button onclick="changeQty('وجبة عائلية مشكلة', 60, 1)">+</button>
+                    <span id="وجبة عائلية مشكلة">0</span>
+                    <button onclick="changeQty('وجبة عائلية مشكلة', 60, -1)">-</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="img-container"><img src="meal2.jpg" alt="وجبة دبل"></div>
+                <h4>وجبة دبل كريسبي</h4>
+                <p class="price">35 ₪</p>
+                <div class="qty-control">
+                    <button onclick="changeQty('وجبة دبل كريسبي', 35, 1)">+</button>
+                    <span id="وجبة دبل كريسبي">0</span>
+                    <button onclick="changeQty('وجبة دبل كريسبي', 35, -1)">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="category" id="sandwich">
         <div class="items-grid">
             <div class="product-card">
@@ -127,7 +153,6 @@
         </div>
     </div>
 </section>
-
 <div class="location-card-container" id="location">
     <div class="address-card">
         <div class="card-icon-box"><i class="fas fa-map-marker-alt"></i></div>
@@ -155,3 +180,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
