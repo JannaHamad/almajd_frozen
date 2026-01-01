@@ -31,7 +31,7 @@ html, body {
     padding: 2px; 
 }
 
-/* --- مجموعة الأيقونات (☰ و سلة الطلبات وعدد القطع) --- */
+/* --- مجموعة الأيقونات --- */
 .cart-menu-group {
     display: flex;
     align-items: center;
@@ -39,16 +39,16 @@ html, body {
 }
 
 .menu-btn {
-    font-size: 32px; /* أكبر */
+    font-size: 32px;
     cursor: pointer;
-    color: #ff6a00; /* لون مناسب للتصميم */
+    color: #ff6a00; /* لون متناسق */
 }
 
 .cart-icon {
     position: relative;
     cursor: pointer;
-    font-size: 32px; /* أكبر */
-    color: #ff6a00; /* لون مناسب */
+    font-size: 32px;
+    color: #ff6a00; /* نفس اللون */
 }
 
 #cartCount {
@@ -93,9 +93,9 @@ html, body {
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
-    font-size: 28px; /* أكبر */
+    font-size: 28px;
     cursor: pointer;
-    color: white; /* لون مناسب */
+    color: white;
 }
 
 /* --- الجسم الداخلي للسلة --- */
@@ -147,7 +147,7 @@ html, body {
     margin-left: 15px; 
     color: #ff6a00; 
     width: 25px;
-    font-size: 18px; /* أكبر */
+    font-size: 18px;
 }
 
 /* --- تذييل الصفحة --- */
@@ -276,13 +276,23 @@ html, body {
     }
 }
 
-/* --- أيقونة الموقع بجانب العنوان --- */
+/* --- أيقونة الموقع بالأسود والعنوان بجوا مربع --- */
 .address-card {
     display: flex;
     align-items: center;
     gap: 10px;
+    background: #ffe6cc; /* مربع فاتح للعنوان */
+    padding: 10px 15px;
+    border-radius: 8px;
 }
+
 .address-card .card-icon-box i {
-    color: #ff6a00;
+    color: #000; /* أيقونة الموقع بالأسود */
     font-size: 28px;
+}
+
+.address-card .card-content h4 {
+    margin: 0;
+    font-weight: bold;
+    color: #ff6a00;
 }
