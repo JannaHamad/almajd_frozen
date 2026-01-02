@@ -339,25 +339,27 @@ html, body {
 }
 
 .section-title {
-    margin: 15px 12px 20px;     /* زيادة المسافة تحت العنوان للخط */
+    margin: 15px 0 20px;       /* مسافة فوق وتحت */
     font-size: 18px;
     font-weight: bold;
     color: #333;
-    text-align: center;         /* يجعل العنوان في الوسط */
+    text-align: center;        /* يخلي النص في الوسط */
     position: relative;
-    display: inline-block;      /* لتناسب الخط مع طول النص */
+    display: block;            /* يخلي العنصر يغطي كل العرض */
 }
 
-/* الخط تحت العنوان */
+/* الخط الممتد أسفل العنوان */
 .section-title::after {
     content: '';
     display: block;
-    width: 50%;                  /* طول الخط نسبةً للنص */
-    height: 3px;                 /* سمك الخط */
-    background-color: #FF8C00;   /* لون الخط المناسب للتصميم */
-    margin: 5px auto 0;          /* يجعل الخط في الوسط مع مسافة صغيرة فوقه */
-    border-radius: 2px;          /* حواف الخط دائرية */
+    width: 80%;                 /* طول الخط 80% من عرض العنصر */
+    max-width: 300px;           /* أقصى طول للخط */
+    height: 3px;                /* سمك الخط */
+    background-color: #FF8C00;  /* لون الخط */
+    margin: 5px auto 0;         /* يجعل الخط في الوسط مع مسافة صغيرة فوقه */
+    border-radius: 2px;
 }
+
 .spices-list {
     padding: 10px 12px;
     display: flex;
@@ -434,6 +436,7 @@ html, body {
     margin: 10px auto 0;     /* توسيط الخط أسفل الكلمة */
     border-radius: 5px;
 }
+
 
 
 
