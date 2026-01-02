@@ -337,29 +337,26 @@ html, body {
 .ask-price:hover {
     background: #1ebe5d;
 }
-
 .section-title {
-    margin: 15px 0 20px;
+    margin: 15px auto 20px;    /* auto من اليمين واليسار لتوسيط العنصر نفسه */
     font-size: 18px;
     font-weight: bold;
     color: #333;
     text-align: center;
-    display: inline-block;  /* نخلي العنصر يأخذ طول النص فقط */
     position: relative;
+    display: table;            /* سيجعل العرض مساوياً لطول النص فقط */
 }
 
-/* الخط أسفل النص */
+/* الخط الممتد أسفل العنوان */
 .section-title::after {
     content: '';
     display: block;
-    width: 100%;             /* نفس طول العنصر (النص) */
+    width: 100%;               /* الآن الـ 100% تعني "نفس طول النص" */
     height: 3px;
     background-color: #FF8C00;
-    margin: 5px 0 0;         /* مسافة صغيرة فوقه */
+    margin: 5px auto 0;
     border-radius: 2px;
 }
-
-
 .spices-list {
     padding: 10px 12px;
     display: flex;
@@ -436,6 +433,7 @@ html, body {
     margin: 10px auto 0;     /* توسيط الخط أسفل الكلمة */
     border-radius: 5px;
 }
+
 
 
 
