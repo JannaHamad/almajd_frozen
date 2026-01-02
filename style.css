@@ -41,14 +41,14 @@ html, body {
 .menu-btn {
     font-size: 32px;
     cursor: pointer;
-    color: #000; /* أسود */
+    color: #000; 
 }
 
 .cart-icon {
     position: relative;
     cursor: pointer;
     font-size: 32px;
-    color: #000; /* أسود */
+    color: #000; 
 }
 
 #cartCount {
@@ -178,25 +178,45 @@ html, body {
     font-size: 35px; 
 }
 
-/* --- بطاقة المنتجات --- */
+/* --- بطاقة المنتجات (تم التعديل هنا) --- */
 .items-grid { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
-    gap: 10px; 
-    padding: 10px; 
+    gap: 12px; 
+    padding: 12px; 
 }
+
 .product-card { 
     background: white; 
     border-radius: 12px; 
-    padding: 10px; 
+    padding: 0; /* تم تصفير البادنج لتلتصق الصورة بالحواف */
     text-align: center; 
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+    overflow: hidden; /* ضروري لقص الصورة عند الزوايا المنحنية */
+    display: flex;
+    flex-direction: column;
 }
+
+.img-container { 
+    width: 100%;
+    height: 160px; /* الارتفاع الذي يجعلها تظهر مثل الصورة الثانية */
+    background: #f9f9f9;
+}
+
 .img-container img { 
-    max-width: 100%; 
-    height: 110px; 
-    object-fit: contain; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* تجعل الصورة تملأ المربع بالكامل دون ترك فراغات */
+    display: block;
 }
+
+/* تنسيق نصوص المنتج بعد إلغاء padding الكارد */
+.product-card h3 {
+    font-size: 14px;
+    margin: 10px 5px 5px 5px;
+    color: #333;
+}
+
 /* --- التابس --- */
 .tabs { 
     display: flex; 
@@ -225,16 +245,16 @@ html, body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: 8px;
+    margin-bottom: 12px; /* مسافة من الأسفل */
 }
 .qty-control button {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     border: none;
     background-color: #ff6a00;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -246,10 +266,10 @@ html, body {
     background-color: #e65c00;
 }
 .qty-control span {
-    min-width: 24px;
+    min-width: 20px;
     text-align: center;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     color: #333;
 }
 
@@ -258,6 +278,7 @@ html, body {
     color: #ff6a00;
     font-weight: bold;
     margin: 5px 0;
+    font-size: 16px;
 }
 
 /* --- صورة الكوفر كاملة --- */
@@ -280,20 +301,20 @@ html, body {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: #ffe6cc; /* مربع فاتح للعنوان */
+    background: #ffe6cc; 
     padding: 10px 15px;
     border-radius: 8px;
 }
 
 .address-card .card-icon-box i {
-    color: #ff6a00; /* أيقونة الموقع بالبرتقالي */
+    color: #ff6a00; 
     font-size: 28px;
 }
 
 .address-card .card-content h4 {
     margin: 0;
     font-weight: bold;
-    color: #000; /* كلمة العنوان سوداء غامقة */
+    color: #000; 
 }
 
 .ask-price {
@@ -309,11 +330,3 @@ html, body {
 .ask-price:hover {
     background: #1ebe5d;
 }
-
-
-
-
-
-
-
-
