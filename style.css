@@ -197,16 +197,24 @@ html, body {
     flex-direction: column;
 }
 
+/* --- التعديل المخصص لعدم قص الصورة --- */
+
 .img-container { 
     width: 100%;
-    height: 160px; /* الارتفاع الذي يجعلها تظهر مثل الصورة الثانية */
-    background: #f9f9f9;
+    height: 180px; /* ارتفاع مناسب جداً للموبايل */
+    background: #fff; /* خلفية بيضاء لكي لا تظهر فراغات رمادية */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .img-container img { 
     width: 100%; 
     height: 100%; 
-    object-fit: cover; /* تجعل الصورة تملأ المربع بالكامل دون ترك فراغات */
+    /* الخيار fill يملأ المربع بالكامل، إذا كانت الصورة مربعة أصلاً ستظهر مثالية */
+    /* إذا كانت المستطيلة، جرب الخيار أدناه */
+    object-fit: fill; 
     display: block;
 }
 
@@ -330,3 +338,4 @@ html, body {
 .ask-price:hover {
     background: #1ebe5d;
 }
+
