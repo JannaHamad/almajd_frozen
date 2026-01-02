@@ -339,26 +339,26 @@ html, body {
 }
 
 .section-title {
-    margin: 15px 0 20px;       /* مسافة فوق وتحت */
+    margin: 15px 0 20px;
     font-size: 18px;
     font-weight: bold;
     color: #333;
-    text-align: center;        /* يخلي النص في الوسط */
+    text-align: center;
+    display: inline-block;  /* نخلي العنصر يأخذ طول النص فقط */
     position: relative;
-    display: block;            /* يخلي العنصر يغطي كل العرض */
 }
 
-/* الخط الممتد أسفل العنوان */
+/* الخط أسفل النص */
 .section-title::after {
     content: '';
     display: block;
-    width: 80%;                 /* طول الخط 80% من عرض العنصر */
-    max-width: 300px;           /* أقصى طول للخط */
-    height: 3px;                /* سمك الخط */
-    background-color: #FF8C00;  /* لون الخط */
-    margin: 5px auto 0;         /* يجعل الخط في الوسط مع مسافة صغيرة فوقه */
+    width: 100%;             /* نفس طول العنصر (النص) */
+    height: 3px;
+    background-color: #FF8C00;
+    margin: 5px 0 0;         /* مسافة صغيرة فوقه */
     border-radius: 2px;
 }
+
 
 .spices-list {
     padding: 10px 12px;
@@ -436,6 +436,7 @@ html, body {
     margin: 10px auto 0;     /* توسيط الخط أسفل الكلمة */
     border-radius: 5px;
 }
+
 
 
 
