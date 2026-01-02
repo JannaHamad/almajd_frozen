@@ -192,10 +192,23 @@ html, body {
     text-align: center; 
     box-shadow: 0 2px 6px rgba(0,0,0,0.05); 
 }
-.img-container img {
+/* --- تعديل حاوية الصور لضمان عدم قص أي جزء --- */
+.img-container {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* الصور تملأ المستطيل بالكامل */
+    height: 150px; /* طول ثابت موحد لكل الصور */
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* أهم تعديل: يضمن ظهور الصورة كاملة داخل الإطار دون قص */
 }
 
 /* --- التابس --- */
@@ -297,30 +310,6 @@ html, body {
     color: #000; /* كلمة العنوان سوداء غامقة */
 }
 
-/* --- الأقسام --- */
-/* قسم الخضار */
-.vegetables {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 20px 10px;
-}
-
-/* قسم الصوصات والمعلبات */
-.sauces-canned {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 20px 10px;
-}
-
-/* قسم اللحوم والجمبري */
-.meats-seafood {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 20px 10px;
-}
 .ask-price {
     display: inline-block;
     margin-top: 8px;
@@ -334,6 +323,7 @@ html, body {
 .ask-price:hover {
     background: #1ebe5d;
 }
+
 
 
 
