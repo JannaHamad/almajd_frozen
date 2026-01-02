@@ -403,6 +403,24 @@ html, body {
     align-items: center;
     gap: 12px; /* مسافة بين السعر والزبالة */
 }
+/* تنسيق خاص لعنوان قائمة الأصناف الرئيسي فقط */
+.main-menu-title {
+    text-align: center;      /* التوسيط */
+    margin: 40px auto 20px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    width: fit-content;      /* ليأخذ الخط عرض الكلمة فقط */
+}
+.main-menu-title::after {
+    content: "";
+    display: block;
+    width: 70%;              /* طول الخط */
+    height: 4px;             /* سمك الخط */
+    background: #ff6a00;     /* اللون البرتقالي */
+    margin: 10px auto 0;     /* توسيط الخط أسفل الكلمة */
+    border-radius: 5px;
+}
 
 
 
