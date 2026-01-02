@@ -195,18 +195,17 @@ html, body {
 /* --- تعديل حاوية الصور لضمان عدم قص أي جزء --- */
 .img-container {
     width: 100%;
-    height: 150px;
+    height: 160px; /* طول ثابت موحّد */
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
 .img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* ⭐ هذا هو المفتاح */
+    object-fit: cover; /* هذا السر */
 }
-
 
 /* --- التابس --- */
 .tabs { 
@@ -320,6 +319,7 @@ html, body {
 .ask-price:hover {
     background: #1ebe5d;
 }
+
 
 
 
