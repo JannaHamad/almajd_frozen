@@ -337,14 +337,27 @@ html, body {
 .ask-price:hover {
     background: #1ebe5d;
 }
-/* ===== قسم البهارات ===== */
+
 .section-title {
-    margin: 15px 12px 5px;
+    margin: 15px 12px 20px;     /* زيادة المسافة تحت العنوان للخط */
     font-size: 18px;
     font-weight: bold;
     color: #333;
+    text-align: center;         /* يجعل العنوان في الوسط */
+    position: relative;
+    display: inline-block;      /* لتناسب الخط مع طول النص */
 }
 
+/* الخط تحت العنوان */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50%;                  /* طول الخط نسبةً للنص */
+    height: 3px;                 /* سمك الخط */
+    background-color: #FF8C00;   /* لون الخط المناسب للتصميم */
+    margin: 5px auto 0;          /* يجعل الخط في الوسط مع مسافة صغيرة فوقه */
+    border-radius: 2px;          /* حواف الخط دائرية */
+}
 .spices-list {
     padding: 10px 12px;
     display: flex;
@@ -421,6 +434,7 @@ html, body {
     margin: 10px auto 0;     /* توسيط الخط أسفل الكلمة */
     border-radius: 5px;
 }
+
 
 
 
