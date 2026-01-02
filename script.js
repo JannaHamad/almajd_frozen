@@ -82,7 +82,7 @@ function updateCart() {
 }
 
 // إرسال الطلب عبر واتساب
-function sendWhatsApp() {
+/*function sendWhatsApp() {
     let totalValue = document.getElementById("cartTotal").innerText;
     let text = "طلب جديد من *مجمدات المجد*:\n\n";
     
@@ -92,10 +92,25 @@ function sendWhatsApp() {
     
     text += `\n*المجموع النهائي: ${totalValue} ₪*`;
     window.open(`https://wa.me/970566706688?text=${encodeURIComponent(text)}`);
+}*/
+function sendWhatsApp() {
+    let text = "🛒 سلة طلباتك من مجمدات المجد:\n\n";
+    
+    for (let item in cart) {
+        text += `• ${item} × ${cart[item].qty}\n`;
+    }
+
+    window.open(
+        `https://wa.me/970566706688?text=${encodeURIComponent(text)}`,
+        "_blank"
+    );
 }
+
+
 
 // تشغيل الوضع الافتراضي عند تحميل الصفحة
 document.addEventListener("DOMContentLoaded", () => {
     const firstTab = document.querySelector(".tab");
     if (firstTab) showCategory('all', firstTab);
 });
+
