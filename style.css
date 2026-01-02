@@ -370,6 +370,39 @@ html, body {
     color: #333;
 }
 
+/* تنسيق أيقونة الحذف داخل سلة المشتريات */
+.delete-item-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d; /* لون أحمر هادئ */
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.delete-item-btn:hover {
+    color: #cc0000; /* أحمر أغمق عند التمرير */
+    transform: scale(1.15); /* تكبير بسيط عند التمرير */
+}
+
+/* لضمان محاذاة السعر والأيقونة في سطر واحد */
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.cart-item-left {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* مسافة بين السعر والزبالة */
+}
 
 
 
